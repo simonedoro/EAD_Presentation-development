@@ -27,14 +27,25 @@ In Claude Code, the same thing from the terminal:
 claude plugin install consulting-deck --marketplace simonedoro/EAD_Presentation-development
 ```
 
-### ChatGPT or Copilot
+### Copilot
 
-There is nothing to install. Download
+There is nothing to install. Copilot does not take plugins of this kind, so you give
+it the instructions as a prompt.
+
+1. Open the EAD template in PowerPoint first, so Copilot builds into it.
+2. Open [`for-chatgpt-and-copilot/copilot-prompt.md`](for-chatgpt-and-copilot/copilot-prompt.md),
+   copy everything below the line, and paste it into Copilot as your first message.
+
+If pasting is awkward, use
+[`copilot-prompt.docx`](for-chatgpt-and-copilot/copilot-prompt.docx) instead: save it
+to your OneDrive and attach it in Copilot with `/`.
+
+### ChatGPT
+
+Attach
 [`for-chatgpt-and-copilot/consulting-deck-prompt.md`](for-chatgpt-and-copilot/consulting-deck-prompt.md)
-and attach it to a new chat, or paste its contents in as your first message. Then say
-what you want to do.
-
-In Copilot, open the EAD template in PowerPoint first, so Copilot builds into it.
+to a new chat, or paste its contents as your first message. It is the full version.
+The shorter Copilot prompt works too.
 
 ## You also need the EAD template
 
