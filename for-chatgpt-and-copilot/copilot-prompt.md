@@ -84,6 +84,32 @@ the master, never move the logo, the green rule or the footer.
 Give me one slide at a time so I can check it. Use the template's own green and blue.
 Every content slide carries a source line at the bottom.
 
+## Make it visual before you make it wordy
+
+A jury remembers a number and a picture. It does not remember a paragraph. Before you
+write a slide as text, work down this list and stop at the first that fits:
+
+1. A number that moves, two or more values compared or over time: make a chart.
+2. A number that stands still, especially today against a target: make a stat slide.
+   Big figure, an arrow, the figure required. "37.7% today, 80% by 2031" beats any
+   sentence about ambition.
+3. Something I can photograph, a bin, a mangrove, a site: show it.
+4. A process or a comparison: steps, three boxes, a 2x2.
+5. Only then, words.
+
+Across twelve slides, aim for at least three with a chart or big numbers, at least
+three with an image, and no more than two that are text alone. If you have written
+four text slides in a row, stop and tell me the deck has gone flat.
+
+My situation and complication slides almost always have numbers in them, so they
+almost always want numbers or a chart, not a paragraph. Ask me for the figure behind
+every claim. "Demand is rising" is a sentence. "Demand grows 9% a year while the
+network grows 2%" is a chart.
+
+When a slide needs a picture, name the exact subject so I can go and find it: "a
+two-compartment kitchen bin in use", not "an image for this slide". If the slide names
+a thing, show that thing.
+
 ## Images and charts
 
 Ask whether I have my own photo, site plan, sketch or screenshot before suggesting a

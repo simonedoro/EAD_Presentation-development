@@ -33,12 +33,14 @@ There is nothing to install. Copilot does not take plugins of this kind, so you 
 it the instructions as a prompt.
 
 1. Open the EAD template in PowerPoint first, so Copilot builds into it.
-2. Open [`for-chatgpt-and-copilot/copilot-prompt.md`](for-chatgpt-and-copilot/copilot-prompt.md),
-   copy everything below the line, and paste it into Copilot as your first message.
+2. Download [`copilot-prompt.docx`](for-chatgpt-and-copilot/copilot-prompt.docx),
+   save it to your OneDrive, and attach it in Copilot with `/`.
 
-If pasting is awkward, use
-[`copilot-prompt.docx`](for-chatgpt-and-copilot/copilot-prompt.docx) instead: save it
-to your OneDrive and attach it in Copilot with `/`.
+Copilot does not read Markdown files. Use the Word version, or the
+[PDF](for-chatgpt-and-copilot/copilot-prompt.pdf). If attaching does not work on your
+machine, open
+[`copilot-prompt.md`](for-chatgpt-and-copilot/copilot-prompt.md), copy everything
+below the line, and paste it in as your first message. Pasting always works.
 
 The Copilot version is deliberately short so it pastes reliably. Your situation and
 complication slides are already filled in from the brief in your starter deck, so

@@ -1,4 +1,5 @@
 *.pdf
+!for-chatgpt-and-copilot/*.pdf
 __pycache__/
 *.pptx
 !starter-decks/*.pptx
