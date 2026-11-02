@@ -1,0 +1,143 @@
+meta:
+  deck: Starter deck
+slides:
+- role: cover
+  archetype: cover
+  title: Your project title
+  sector: Terrestrial & Marine Biodiversity
+  category: 05 Ecotourism
+  team: Your group
+  date: November 2026
+- role: agenda
+  archetype: agenda
+  title: Replace this with your agenda, or with your objective for the meeting
+  current: 1
+  items:
+  - The ecotourism problem
+  - Three initiatives we propose
+  - What we need decided
+  source: Your group
+- role: situation
+  archetype: statement
+  title: Abu Dhabi plans to grow from 26.6 to 39.3 million visitors by 2030
+  statement: The growth plan leans on hotels, attractions and campaigns for culture and heritage.
+  points_heading: Key facts
+  points:
+  - 26.6 million visitors in 2025
+  - 39.3 million is the target for 2030
+  - Conservationists warn fragile sites cannot take the load
+  source: DCT Abu Dhabi (2025-26)
+  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
+    this material, so spend your time on what you add to it.
+- role: complication
+  archetype: statement
+  title: World-class islands, mangroves and deserts sit barely visited
+  statement: A 200-island guide and an Al Dhafra plan exist, yet nature is rarely why people come.
+  points_heading: Key facts
+  points:
+  - 200 islands in the new water sports guide
+  - Costa Rica protects 25% of its land
+  - 60% of Costa Rica is forest
+  source: Abu Dhabi Islands and Water Sports Guide (2026); World Bank (2023)
+  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
+    this material, so spend your time on what you add to it.
+- role: problem
+  archetype: statement
+  title: Write your problem statement here, as a question to be answered
+  statement: How do we ... ? Write it as a question a decision maker could answer yes or no to.
+  source: Your group
+- role: solutions
+  archetype: columns
+  title: Name your three initiatives here, in one sentence that links them
+  source: Your group
+  columns:
+  - heading: Initiative one
+    lead: One line on what it is
+    bullets:
+    - Why it works
+    - What makes it different
+  - heading: Initiative two
+    lead: One line on what it is
+    bullets:
+    - Why it works
+    - What makes it different
+  - heading: Initiative three
+    lead: One line on what it is
+    bullets:
+    - Why it works
+    - What makes it different
+  takeaway: One line on what the three have in common
+- role: initiative
+  archetype: initiative
+  name: Initiative one
+  title: State what initiative one achieves, not what it is called
+  what: What it is, in a sentence a jury member who has never heard of it would understand.
+  how: How it works. Keep it to eighteen words.
+  needs: 'What you need to make it happen: money, people, permission, a decision.'
+  impact: What changes if it works. Put a number on it.
+  risk: The thing most likely to go wrong, and what you would do about it.
+  source: Your group analysis
+  notes: 'Detail for jury questions goes here, not on the slide. Add a second slide for this initiative
+    only if it genuinely needs the room.
+
+    '
+- role: initiative
+  archetype: initiative
+  name: Initiative two
+  title: State what initiative two achieves, not what it is called
+  what: What it is, in a sentence a jury member who has never heard of it would understand.
+  how: How it works. Keep it to eighteen words.
+  needs: 'What you need to make it happen: money, people, permission, a decision.'
+  impact: What changes if it works. Put a number on it.
+  risk: The thing most likely to go wrong, and what you would do about it.
+  source: Your group analysis
+- role: initiative
+  archetype: initiative
+  name: Initiative three
+  title: State what initiative three achieves, not what it is called
+  what: What it is, in a sentence a jury member who has never heard of it would understand.
+  how: How it works. Keep it to eighteen words.
+  needs: 'What you need to make it happen: money, people, permission, a decision.'
+  impact: What changes if it works. Put a number on it.
+  risk: The thing most likely to go wrong, and what you would do about it.
+  source: Your group analysis
+- role: recap
+  archetype: table
+  title: Summarise all three here, with the impact and what each one costs
+  source: Your group analysis
+  header:
+  - Initiative
+  - What it needs
+  - Impact
+  - When
+  col_widths:
+  - 4
+  - 3
+  - 3
+  - 2
+  rows:
+  - - Initiative one
+    - ''
+    - ''
+    - ''
+  - - Initiative two
+    - ''
+    - ''
+    - ''
+  - - Initiative three
+    - ''
+    - ''
+    - ''
+  takeaway: One line on what the three add up to together
+- role: ask
+  archetype: cards
+  title: State what you need from the jury here, and say by when
+  source: Your group
+  cards:
+  - heading: First decision
+    text: What you are asking for, who has to say yes, and what happens if they do not.
+  - heading: Second decision
+    text: What you are asking for, who has to say yes, and what happens if they do not.
+  - heading: Third decision
+    text: What you are asking for, who has to say yes, and what happens if they do not.
+  takeaway: Decision needed by [date]

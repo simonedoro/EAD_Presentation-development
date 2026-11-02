@@ -1,0 +1,144 @@
+meta:
+  deck: Starter deck
+slides:
+- role: cover
+  archetype: cover
+  title: Your project title
+  sector: Integrated Environment Policy & Planning
+  category: 03 Private climate finance
+  team: Your group
+  date: November 2026
+- role: agenda
+  archetype: agenda
+  title: Replace this with your agenda, or with your objective for the meeting
+  current: 1
+  items:
+  - The private climate finance problem
+  - Three initiatives we propose
+  - What we need decided
+  source: Your group
+- role: situation
+  archetype: statement
+  title: The UAE has committed $163 billion to net zero against a need near $680 billion
+  statement: Public commitment covers roughly a quarter of what the transition is estimated to cost.
+  points_heading: Key facts
+  points:
+  - $163 billion committed by the UAE
+  - $680 billion is the estimated total need
+  - Alterra aims to draw $250 billion by 2030
+  source: US State Dept (2024); Standard Chartered via BCG (2022)
+  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
+    this material, so spend your time on what you add to it.
+- role: complication
+  archetype: statement
+  title: Private capital holds the money but sees little reason to deploy it
+  statement: Without a carbon price or a clear return, climate projects lose to everything else on the
+    balance sheet.
+  points_heading: Key facts
+  points:
+  - Public money alone cannot close a gap that size
+  - Blame falls on immature technology and weak disclosure
+  - Private companies hold most of the capital
+  source: CNBC (Aug 2026); UK Green Investment Bank (2015)
+  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
+    this material, so spend your time on what you add to it.
+- role: problem
+  archetype: statement
+  title: Write your problem statement here, as a question to be answered
+  statement: How do we ... ? Write it as a question a decision maker could answer yes or no to.
+  source: Your group
+- role: solutions
+  archetype: columns
+  title: Name your three initiatives here, in one sentence that links them
+  source: Your group
+  columns:
+  - heading: Initiative one
+    lead: One line on what it is
+    bullets:
+    - Why it works
+    - What makes it different
+  - heading: Initiative two
+    lead: One line on what it is
+    bullets:
+    - Why it works
+    - What makes it different
+  - heading: Initiative three
+    lead: One line on what it is
+    bullets:
+    - Why it works
+    - What makes it different
+  takeaway: One line on what the three have in common
+- role: initiative
+  archetype: initiative
+  name: Initiative one
+  title: State what initiative one achieves, not what it is called
+  what: What it is, in a sentence a jury member who has never heard of it would understand.
+  how: How it works. Keep it to eighteen words.
+  needs: 'What you need to make it happen: money, people, permission, a decision.'
+  impact: What changes if it works. Put a number on it.
+  risk: The thing most likely to go wrong, and what you would do about it.
+  source: Your group analysis
+  notes: 'Detail for jury questions goes here, not on the slide. Add a second slide for this initiative
+    only if it genuinely needs the room.
+
+    '
+- role: initiative
+  archetype: initiative
+  name: Initiative two
+  title: State what initiative two achieves, not what it is called
+  what: What it is, in a sentence a jury member who has never heard of it would understand.
+  how: How it works. Keep it to eighteen words.
+  needs: 'What you need to make it happen: money, people, permission, a decision.'
+  impact: What changes if it works. Put a number on it.
+  risk: The thing most likely to go wrong, and what you would do about it.
+  source: Your group analysis
+- role: initiative
+  archetype: initiative
+  name: Initiative three
+  title: State what initiative three achieves, not what it is called
+  what: What it is, in a sentence a jury member who has never heard of it would understand.
+  how: How it works. Keep it to eighteen words.
+  needs: 'What you need to make it happen: money, people, permission, a decision.'
+  impact: What changes if it works. Put a number on it.
+  risk: The thing most likely to go wrong, and what you would do about it.
+  source: Your group analysis
+- role: recap
+  archetype: table
+  title: Summarise all three here, with the impact and what each one costs
+  source: Your group analysis
+  header:
+  - Initiative
+  - What it needs
+  - Impact
+  - When
+  col_widths:
+  - 4
+  - 3
+  - 3
+  - 2
+  rows:
+  - - Initiative one
+    - ''
+    - ''
+    - ''
+  - - Initiative two
+    - ''
+    - ''
+    - ''
+  - - Initiative three
+    - ''
+    - ''
+    - ''
+  takeaway: One line on what the three add up to together
+- role: ask
+  archetype: cards
+  title: State what you need from the jury here, and say by when
+  source: Your group
+  cards:
+  - heading: First decision
+    text: What you are asking for, who has to say yes, and what happens if they do not.
+  - heading: Second decision
+    text: What you are asking for, who has to say yes, and what happens if they do not.
+  - heading: Third decision
+    text: What you are asking for, who has to say yes, and what happens if they do not.
+  takeaway: Decision needed by [date]

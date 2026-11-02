@@ -94,6 +94,12 @@ list. If a team is working on something that is not on it, take what they type.
 The sector follows from the challenge, so ask for the challenge number and fill the
 sector in yourself. Do not ask them to pick both.
 
+Once you have the number, fill slides 3 and 4, the situation and the complication,
+from `reference/challenges.md`. That content comes from the challenge brief they were
+given, so do not make them write it again. Say it is pre-filled and ask them to change
+it if their work has moved on. Their time goes on what they add to the problem, not on
+restating it.
+
 ## Step 4. Write the slides
 
 For each slide: one action title, one message, the proof, one source.

@@ -1,3 +1,4 @@
-*.pptx
 *.pdf
 __pycache__/
+*.pptx
+!starter-decks/*.pptx

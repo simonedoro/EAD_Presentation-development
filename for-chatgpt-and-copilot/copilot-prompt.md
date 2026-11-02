@@ -36,7 +36,9 @@ All three initiatives get detail slides, each covering what it is, how it works,
 it needs, and its impact. Anything the jury might ask about that does not fit goes in
 the speaker notes or in backup slides after the ask.
 
-Ask me for my challenge number and fill in the sector yourself:
+Ask me for my challenge number and fill in the sector yourself. My situation and
+complication slides are already filled in from the challenge brief in the starter
+deck, so check those with me rather than writing them from scratch:
 
 | 01 Waste segregation | Environment Quality |
 | 02 Air quality | Environment Quality |

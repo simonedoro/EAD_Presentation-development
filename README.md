@@ -47,9 +47,24 @@ Attach
 to a new chat, or paste its contents as your first message. It is the full version.
 The shorter Copilot prompt works too.
 
-## You also need the EAD template
+## Start from your group's starter deck
 
-The EAD PowerPoint template is not in this repository. Use the copy EAD gave you.
+[`starter-decks/`](starter-decks/) has one deck per challenge, already in the EAD
+template. Download the one for your challenge and open it in PowerPoint.
+
+Each starter deck has the eleven slides of the pitch in order, with prompts where
+your content goes. The situation and complication slides are already filled in from
+the challenge brief, with the key facts and sources. Check them, change them if your
+work has moved on, and spend your time on what you add to the problem rather than on
+restating it.
+
+`EAD Template (empty).pptx` in the same folder is the blank template, if you would
+rather start from nothing.
+
+## The template
+
+The EAD template is included, both inside the plugin and as
+`starter-decks/EAD Template (empty).pptx`.
 
 ## Start it
 
