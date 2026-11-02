@@ -40,12 +40,19 @@ If pasting is awkward, use
 [`copilot-prompt.docx`](for-chatgpt-and-copilot/copilot-prompt.docx) instead: save it
 to your OneDrive and attach it in Copilot with `/`.
 
+The Copilot version is deliberately short so it pastes reliably. Your situation and
+complication slides are already filled in from the brief in your starter deck, so
+Copilot does not need the case material to help you build.
+
 ### ChatGPT
 
-Attach
-[`for-chatgpt-and-copilot/consulting-deck-prompt.md`](for-chatgpt-and-copilot/consulting-deck-prompt.md)
-to a new chat, or paste its contents as your first message. It is the full version.
-The shorter Copilot prompt works too.
+Attach the file for your challenge from
+[`for-chatgpt-and-copilot/cases/`](for-chatgpt-and-copilot/cases/) to a new chat, or
+paste it in as your first message. Each one already contains your case material, so
+you need nothing else.
+
+[`consulting-deck-prompt.md`](for-chatgpt-and-copilot/consulting-deck-prompt.md) is
+the same instructions without a case attached, if you want the generic version.
 
 ## Start from your group's starter deck
 

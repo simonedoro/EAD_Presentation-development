@@ -94,11 +94,23 @@ list. If a team is working on something that is not on it, take what they type.
 The sector follows from the challenge, so ask for the challenge number and fill the
 sector in yourself. Do not ask them to pick both.
 
-Once you have the number, fill slides 3 and 4, the situation and the complication,
-from `reference/challenges.md`. That content comes from the challenge brief they were
-given, so do not make them write it again. Say it is pre-filled and ask them to change
-it if their work has moved on. Their time goes on what they add to the problem, not on
-restating it.
+Once you have the number, read that case in `reference/challenges.md` before you help
+with anything else. It holds the brief, the question, the hypothesis branches and a
+model storyline, in four tiers, and the tiers decide what you may hand over:
+
+- **Tier 1, the brief.** Fill slides 3 and 4, situation and complication, from it. Say
+  it is pre-filled from their brief and ask them to change it if their work has moved
+  on. Do not make them rewrite what they were given.
+- **Tier 2, the question.** They write their own problem statement. Test it against
+  the five SMART tests and name what is missing, the way the case file does. Show the
+  model version only if they are stuck and ask.
+- **Tier 3, the hypotheses.** Use in Challenge mode to ask whether their three
+  initiatives test different branches or crowd into one.
+- **Tier 4, the model storyline.** Only after they have written their own, as a
+  comparison. Never before.
+
+If they ask outright for tiers 2 to 4, give it, and say what it costs them: the jury
+scores their thinking, and that is the part being scored.
 
 ## Step 4. Write the slides
 
@@ -227,9 +239,13 @@ Do not rewrite their work in this mode. Ask, then wait.
 Work through their deck and push where a jury would push:
 
 - **The problem.** Is the problem statement a question with a real answer, or a
-  restatement of the situation? Who owns this problem today and what do they do now?
+  restatement of the situation? Run it through the five SMART tests out loud: who
+  exactly, measured how, actionable by whom, relevant to what, and by when. Who owns
+  this problem today and what do they do now?
 - **The three initiatives.** Are they genuinely three options, or one idea in three
-  outfits? What is the obvious fourth that they left out, and why?
+  outfits? Check them against the hypothesis branches for their case in
+  `reference/challenges.md`: three initiatives testing one branch is a weak set. What
+  is the obvious fourth that they left out, and why?
 - **The evidence.** Which number carries the most weight in this pitch, and where did
   it come from? What happens to the case if that number is half what they think?
 - **The ask.** Who exactly signs this off? What do they say no to in order to say yes

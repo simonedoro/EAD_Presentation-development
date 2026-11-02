@@ -1,6 +1,6 @@
 {
   "name": "consulting-deck",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Build, challenge and review the innovation bootcamp pitch deck in the EAD template. Three modes, a fixed pitch structure, action titles and large readable type.",
   "author": { "name": "Simone Doro" },
   "keywords": ["powerpoint", "slides", "pitch", "bootcamp", "action titles", "storyline"]
