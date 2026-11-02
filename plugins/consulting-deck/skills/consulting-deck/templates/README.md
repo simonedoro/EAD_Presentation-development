@@ -1,13 +1,11 @@
-# Put the EAD template here
+# Template
 
-The EAD PowerPoint template is not kept in this repository, because the repository is
-public and the template is EAD's.
+`EAD Template.potx` is the template every deck is built into. It is the file EAD
+provided. Do not edit it, do not change the master, and do not move the logo, the
+green rule or the footer.
 
-Save the file EAD gave you into this folder, keeping its name:
-
-    EAD Template.potx
-
-If you keep it somewhere else, point the builder at it:
+The builder uses it automatically. To point at a different copy, for example one EAD
+has since updated:
 
     python3 scripts/build_deck.py storyline.yaml \
       --profile profiles/ead.json \
