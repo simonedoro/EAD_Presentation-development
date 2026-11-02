@@ -18,30 +18,45 @@ slides:
   - What we need decided
   source: Your group
 - role: situation
-  archetype: statement
+  archetype: kpi
   title: Abu Dhabi is building the capacity to divert 80% of waste from landfill by 2031
-  statement: Fifty-one initiatives, new recovery facilities, a waste-to-energy plant and a bigger fleet
-    are under way.
-  points_heading: Key facts
-  points:
-  - 37.7% of waste diverted from landfill in 2025
-  - 80% is the target for 2031
-  - First two-bin pilot starts in Shakhbout City, September 2026
   source: The National (Jul 2026); Tadweer ESG Report 2025
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  stats:
+  - value: 37.7%
+    target: 80%
+    label: Waste diverted from landfill
+    note: 2025 actual against the 2031 target
+    highlight: true
+  - value: 15-20%
+    label: Recovered clean by new plants
+    note: Of what arrives today
+  - value: Sept 2026
+    label: First two-bin pilot
+    note: Shakhbout City
+  takeaway: The capacity is arriving. The clean input is not.
+  notes: Pre-filled from the challenge brief. Change it if your work has moved on. The jury knows this
+    material, so spend your time on what you add to it.
 - role: complication
-  archetype: statement
-  title: The new plants cannot recover what arrives, because the waste comes in mixed
-  statement: Sorting plants expect to recover only 15 to 20% of what they receive as clean recyclables.
-  points_heading: Key facts
-  points:
-  - Years of campaigns have changed household habits little
-  - Most towers have a single rubbish chute
-  - Families have never made sorting part of the routine
+  archetype: chart
+  title: Only a fifth of what reaches the new plants comes back as clean recyclable
   source: Tadweer ESG Report 2025; Korean Ministry of Environment (2024)
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  chart_type: bar
+  unit: Share of waste received
+  categories:
+  - Recovered clean
+  - Lost to contamination
+  series:
+  - name: Share
+    values:
+    - 17.5
+    - 82.5
+  read_heading: What this says
+  read:
+  - New plants recover 15 to 20% of what arrives
+  - The rest is too mixed to use
+  - Capacity is not the constraint, input quality is
+  notes: Pre-filled from the challenge brief. If you have better numbers, use yours and say where they
+    came from.
 - role: problem
   archetype: statement
   title: Write your problem statement here, as a question to be answered
@@ -57,17 +72,26 @@ slides:
     bullets:
     - Why it works
     - What makes it different
+    image: images/a-residential-tower-rubbish-chute.jpg
+    image_note: a residential tower rubbish chute
   - heading: Initiative two
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/a-two-compartment-kitchen-bin-in-use.jpg
+    image_note: a two-compartment kitchen bin in use
   - heading: Initiative three
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/a-sorting-line-at-a-materials-recovery-facility.jpg
+    image_note: a sorting line at a materials recovery facility
   takeaway: One line on what the three have in common
+  notes: 'Image subjects to find: a residential tower rubbish chute; a two-compartment kitchen bin in
+    use; a sorting line at a materials recovery facility. Drop the files into an images folder next to
+    this deck, or replace the placeholders in PowerPoint.'
 - role: initiative
   archetype: initiative
   name: Initiative one
@@ -82,6 +106,8 @@ slides:
     only if it genuinely needs the room.
 
     '
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative two
@@ -92,6 +118,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative three
@@ -102,6 +130,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: recap
   archetype: table
   title: Summarise all three here, with the impact and what each one costs

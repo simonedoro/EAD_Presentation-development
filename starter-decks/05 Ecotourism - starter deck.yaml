@@ -18,29 +18,45 @@ slides:
   - What we need decided
   source: Your group
 - role: situation
-  archetype: statement
+  archetype: kpi
   title: Abu Dhabi plans to grow from 26.6 to 39.3 million visitors by 2030
-  statement: The growth plan leans on hotels, attractions and campaigns for culture and heritage.
-  points_heading: Key facts
-  points:
-  - 26.6 million visitors in 2025
-  - 39.3 million is the target for 2030
-  - Conservationists warn fragile sites cannot take the load
   source: DCT Abu Dhabi (2025-26)
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  stats:
+  - value: 26.6M
+    target: 39.3M
+    label: Visitors to Abu Dhabi
+    note: 2025 actual against the 2030 target
+    highlight: true
+  - value: '200'
+    label: Islands in the new guide
+    note: Barely visited
+  - value: 25%
+    label: Of Costa Rica is protected land
+    note: The comparison case
+  takeaway: The visitors are coming. Nature is not why.
+  notes: Pre-filled from the challenge brief. Change it if your work has moved on. The jury knows this
+    material, so spend your time on what you add to it.
 - role: complication
-  archetype: statement
-  title: World-class islands, mangroves and deserts sit barely visited
-  statement: A 200-island guide and an Al Dhafra plan exist, yet nature is rarely why people come.
-  points_heading: Key facts
-  points:
-  - 200 islands in the new water sports guide
-  - Costa Rica protects 25% of its land
-  - 60% of Costa Rica is forest
+  archetype: chart
+  title: Abu Dhabi plans to add almost 13 million visitors in five years
   source: Abu Dhabi Islands and Water Sports Guide (2026); World Bank (2023)
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  chart_type: bar
+  unit: Visitors, millions
+  categories:
+  - 2025 actual
+  - 2030 target
+  series:
+  - name: Visitors, millions
+    values:
+    - 26.6
+    - 39.3
+  read_heading: What this says
+  read:
+  - 26.6 million visitors in 2025
+  - 39.3 million is the 2030 target
+  - Fragile sites absorb the growth either way
+  notes: Pre-filled from the challenge brief. If you have better numbers, use yours and say where they
+    came from.
 - role: problem
   archetype: statement
   title: Write your problem statement here, as a question to be answered
@@ -56,17 +72,26 @@ slides:
     bullets:
     - Why it works
     - What makes it different
+    image: images/kayaking-through-mangroves-at-low-tide.jpg
+    image_note: kayaking through mangroves at low tide
   - heading: Initiative two
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/a-desert-camp-at-dusk-in-Al-Dhafra.jpg
+    image_note: a desert camp at dusk in Al Dhafra
   - heading: Initiative three
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/an-empty-island-beach-in-the-Arabian-Gulf.jpg
+    image_note: an empty island beach in the Arabian Gulf
   takeaway: One line on what the three have in common
+  notes: 'Image subjects to find: kayaking through mangroves at low tide; a desert camp at dusk in Al
+    Dhafra; an empty island beach in the Arabian Gulf. Drop the files into an images folder next to this
+    deck, or replace the placeholders in PowerPoint.'
 - role: initiative
   archetype: initiative
   name: Initiative one
@@ -81,6 +106,8 @@ slides:
     only if it genuinely needs the room.
 
     '
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative two
@@ -91,6 +118,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative three
@@ -101,6 +130,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: recap
   archetype: table
   title: Summarise all three here, with the impact and what each one costs

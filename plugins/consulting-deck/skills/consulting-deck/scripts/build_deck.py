@@ -36,7 +36,7 @@ except ImportError:
 
 EMU_IN = 914400
 ARCHETYPES = (
-    "cover", "section", "agenda", "statement", "bullets", "columns",
+    "cover", "section", "agenda", "statement", "kpi", "bullets", "columns",
     "cards", "steps", "initiative", "visual", "matrix", "table", "chart",
 )
 
@@ -46,15 +46,15 @@ ARCHETYPES = (
 BOOTCAMP_SKELETON = [
     ("cover",        ("cover",),                                   True),
     ("agenda",       ("agenda", "bullets", "statement"),           True),
-    ("situation",    ("statement", "bullets", "chart", "columns",
+    ("situation",    ("statement", "kpi", "bullets", "chart", "columns",
                      "visual"),                                   True),
-    ("complication", ("statement", "bullets", "chart", "columns",
+    ("complication", ("statement", "kpi", "bullets", "chart", "columns",
                      "visual"),                                   True),
     ("problem",      ("statement",),                               True),
     ("solutions",    ("columns",),                                 True),
     ("initiative",   ("initiative", "columns", "steps", "chart",
                      "visual"),                                   True),
-    ("recap",        ("table", "cards", "columns"),                True),
+    ("recap",        ("table", "cards", "columns", "kpi"),         True),
     ("ask",          ("cards", "steps", "bullets", "table"),       True),
 ]
 
@@ -273,6 +273,26 @@ class Builder:
             run.font.color.rgb = rgb(over.get("color", color or self.c["ink"]))
         return box
 
+    def rich_line(self, slide, x, y, w, h, parts, align=PP_ALIGN.CENTER,
+                  anchor=MSO_ANCHOR.MIDDLE):
+        """One paragraph, several runs. parts: [(text, size, color, bold)]."""
+        box = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
+        tf = box.text_frame
+        tf.word_wrap = True
+        tf.vertical_anchor = anchor
+        tf.margin_left = tf.margin_right = 0
+        tf.margin_top = tf.margin_bottom = 0
+        para = tf.paragraphs[0]
+        para.alignment = align
+        for txt, size, color, bold in parts:
+            run = para.add_run()
+            run.text = str(txt)
+            run.font.name = self.font
+            run.font.size = Pt(size)
+            run.font.bold = bold
+            run.font.color.rgb = rgb(color)
+        return box
+
     def bullet_rows(self, slide, x, y, w, items, size=11, color=None,
                     marker=None, row_gap=0.10, marker_size=0.085):
         """Square-marker bullets. Returns bottom y."""
@@ -456,6 +476,56 @@ def a_statement(b, slide, spec):
         b.bullet_rows(slide, px, cy, pw, points, size=sub, row_gap=0.18)
 
 
+def a_kpi(b, slide, spec):
+    """Stat tiles. Each may carry a target, rendered as now to target.
+
+    This is the from-to slide: what the number is today and what it needs to be.
+    """
+    b.strip_placeholders(slide, keep_title=True)
+    b.set_title(slide, spec["title"])
+    r = b.content_region(bool(spec.get("takeaway")))
+    stats = spec["stats"]
+    n = len(stats)
+    gap = 0.30
+    tw = (r["w"] - gap * (n - 1)) / n
+    big = b.sz("kpi_value", 34 if n <= 3 else 28)
+    lab = b.sz("col_heading", 14)
+    note = b.sz("col_lead", 12.5)
+    needed = 0.0
+    for st in stats:
+        h = 0.30 + big / 72.0 * 1.5 + 0.08
+        h += max(0.30, est_height(st.get("label", ""), tw - 0.44, lab, bold=True))
+        if st.get("note"):
+            h += 0.08 + max(0.24, est_height(st["note"], tw - 0.44, note))
+        needed = max(needed, h + 0.34)
+    th = min(r["h"], max(1.8, needed))
+    top = r["y"] + min(0.45, max(0.0, (r["h"] - th) / 2))
+
+    for i, st in enumerate(stats):
+        x = r["x"] + i * (tw + gap)
+        hi = bool(st.get("highlight"))
+        b.rect(slide, x, top, tw, th,
+               fill=b.c["panel"] if hi else b.c["white"],
+               line=None if hi else b.c["rule"])
+        b.rect(slide, x, top, tw, 0.055, fill=b.c["primary"])
+
+        parts = [(st["value"], big, b.c["primary"], True)]
+        if st.get("target"):
+            parts.append(("  \u2192  ", big * 0.6, b.c["muted"], False))
+            parts.append((st["target"], big, b.c["secondary"], True))
+        b.rich_line(slide, x + 0.16, top + 0.30, tw - 0.32, big / 72.0 * 1.5, parts)
+
+        cy = top + 0.30 + big / 72.0 * 1.5 + 0.08
+        lh = max(0.30, est_height(st.get("label", ""), tw - 0.44, lab, bold=True))
+        b.text(slide, x + 0.22, cy, tw - 0.44, lh, st.get("label", ""),
+               size=lab, bold=True, color=b.c["ink"], align=PP_ALIGN.CENTER)
+        if st.get("note"):
+            b.text(slide, x + 0.22, cy + lh + 0.08, tw - 0.44,
+                   max(0.24, est_height(st["note"], tw - 0.44, note)),
+                   st["note"], size=note, color=b.c["subink"],
+                   align=PP_ALIGN.CENTER)
+
+
 def a_bullets(b, slide, spec):
     b.strip_placeholders(slide, keep_title=True)
     b.set_title(slide, spec["title"])
@@ -513,7 +583,8 @@ def a_columns(b, slide, spec):
         cy = r["y"] + pad + 0.06
         if img_h:
             place_image(b, slide, col.get("image"), x + pad, cy,
-                        cw - 2 * pad, img_h, "image")
+                        cw - 2 * pad, img_h,
+                        col.get("image_note") or "image")
             cy += img_h + 0.20
         head = col.get("heading", "")
         if head:
@@ -641,7 +712,7 @@ def a_initiative(b, slide, spec):
     if cy + 0.9 < img_bottom:
         place_image(b, slide, spec.get("image"), r["x"] + pad, cy,
                     lw - 2 * pad, img_bottom - cy,
-                    "image, diagram or mock-up")
+                    spec.get("image_note") or "image, diagram or mock-up")
 
     rx = r["x"] + lw + 0.40
     rw = r["w"] - lw - 0.40
@@ -869,7 +940,8 @@ def a_chart(b, slide, spec):
 
 RENDERERS = {
     "cover": a_cover, "section": a_section, "agenda": a_agenda,
-    "statement": a_statement, "bullets": a_bullets, "columns": a_columns,
+    "statement": a_statement, "kpi": a_kpi, "bullets": a_bullets,
+    "columns": a_columns,
     "cards": a_cards, "steps": a_steps, "initiative": a_initiative,
     "visual": a_visual, "matrix": a_matrix, "table": a_table,
     "chart": a_chart,
@@ -880,7 +952,8 @@ LAYOUT_FOR = {
     # layout has a 6.775in title box and a busy watermark, neither of which
     # suits an action title.
     "cover": "cover", "section": "section", "agenda": "content",
-    "statement": "content", "bullets": "content", "columns": "content",
+    "statement": "content", "kpi": "content", "bullets": "content",
+    "columns": "content",
     "cards": "content", "steps": "content", "initiative": "content",
     "visual": "content", "matrix": "content", "table": "content",
     "chart": "content",
@@ -968,6 +1041,13 @@ def validate(spec, profile):
         if arch == "chart":
             if not s.get("categories") or not s.get("series"):
                 errors.append(f"slide {i}: chart needs categories and series")
+        if arch == "kpi":
+            st = s.get("stats") or []
+            if not 2 <= len(st) <= 4:
+                errors.append(f"slide {i}: a kpi slide takes 2 to 4 stats, got {len(st)}")
+            for t in st:
+                if not t.get("value") or not t.get("label"):
+                    errors.append(f"slide {i}: every stat needs a value and a label")
         if arch == "visual" and not s.get("image"):
             errors.append(f"slide {i}: a visual slide needs an image")
         if arch == "agenda" and not s.get("items"):

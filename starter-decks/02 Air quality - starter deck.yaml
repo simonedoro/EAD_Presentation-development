@@ -18,30 +18,47 @@ slides:
   - What we need decided
   source: Your group
 - role: situation
-  archetype: statement
+  archetype: kpi
   title: Fine dust in Abu Dhabi runs at over six times the WHO guideline
-  statement: PM2.5 averaged 32 micrograms per cubic metre in 2024, against a WHO annual guideline of 5.
-  points_heading: Key facts
-  points:
-  - 22 EAD monitoring stations, 20 fixed and 2 mobile
-  - 40% of PM2.5 is pollution blown in from outside
-  - 25% is desert dust
   source: IQAir World Air Quality Report 2024; EAD Air Quality Report 2022
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  stats:
+  - value: '32'
+    target: '5'
+    label: PM2.5 micrograms per cubic metre
+    note: 2024 average against the WHO guideline
+    highlight: true
+  - value: '22'
+    label: EAD monitoring stations
+    note: 20 fixed and 2 mobile
+  - value: 48h
+    label: Warning residents get today
+    note: None
+  takeaway: The monitoring exists. The warning does not.
+  notes: Pre-filled from the challenge brief. Change it if your work has moved on. The jury knows this
+    material, so spend your time on what you add to it.
 - role: complication
-  archetype: statement
-  title: Nobody can say which source drives a bad day, so every fix is a guess
-  statement: The authorities cannot predict the next spike or say which neighbourhoods breathe the worst
-    of it.
-  points_heading: Key facts
-  points:
-  - Greening, traffic limits and industry caps all compete
-  - Desert dust is treated as beyond control
-  - Residents get no warning before a spike
+  archetype: chart
+  title: Two thirds of Abu Dhabi's fine dust comes from outside the city or the desert
   source: EAD Air Quality Report 2022 and source study; Beijing EEB (2025)
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  chart_type: bar
+  unit: Share of PM2.5
+  categories:
+  - Blown in from outside
+  - Desert dust
+  - Everything else
+  series:
+  - name: Share of PM2.5
+    values:
+    - 40
+    - 25
+    - 35
+  read_heading: What this says
+  read:
+  - 40% is human-made pollution from outside
+  - 25% is desert dust
+  - Only the remainder is clearly local to act on
+  notes: Pre-filled from the challenge brief. If you have better numbers, use yours and say where they
+    came from.
 - role: problem
   archetype: statement
   title: Write your problem statement here, as a question to be answered
@@ -57,17 +74,26 @@ slides:
     bullets:
     - Why it works
     - What makes it different
+    image: images/an-air-quality-monitoring-station-in-open-desert.jpg
+    image_note: an air quality monitoring station in open desert
   - heading: Initiative two
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/the-Abu-Dhabi-skyline-on-a-dusty-day.jpg
+    image_note: the Abu Dhabi skyline on a dusty day
   - heading: Initiative three
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/a-classroom-air-purifier.jpg
+    image_note: a classroom air purifier
   takeaway: One line on what the three have in common
+  notes: 'Image subjects to find: an air quality monitoring station in open desert; the Abu Dhabi skyline
+    on a dusty day; a classroom air purifier. Drop the files into an images folder next to this deck,
+    or replace the placeholders in PowerPoint.'
 - role: initiative
   archetype: initiative
   name: Initiative one
@@ -82,6 +108,8 @@ slides:
     only if it genuinely needs the room.
 
     '
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative two
@@ -92,6 +120,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative three
@@ -102,6 +132,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: recap
   archetype: table
   title: Summarise all three here, with the impact and what each one costs

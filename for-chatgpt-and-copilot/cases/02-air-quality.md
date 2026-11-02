@@ -1,7 +1,6 @@
 # 02 Air quality: deck skill for ChatGPT
 
-Attach this whole file to a new chat, or paste it in as your first message.
-It already contains your case, so you do not need anything else.
+Attach this whole file to a new chat, or paste it in as your first message. It already contains your case.
 
 # Innovation bootcamp deck
 
@@ -74,9 +73,8 @@ Rules on the structure:
   closing slide then pulls the asks together with a date.
 - Anything the jury might ask about but that does not fit goes in the speaker notes,
   or in backup slides after the ask. Do not crowd the main slides.
-- Situation and complication can be a chart or a picture slide instead of text when
-  the evidence is a number or a site. Use that rather than describing the picture in
-  words.
+- Situation and complication should be stat tiles, a chart or a picture whenever the
+  evidence is a number or a place. Text is the fallback, not the default.
 
 ## Step 3. Challenge and sector
 
@@ -146,12 +144,68 @@ expect. Stay inside these or the text will not fit.
 | Box bullet | 8 words, 3 bullets per box |
 | Initiative description | 35 words |
 | Initiative "how", "needs", "impact", "risk" | 18 words each |
+| Stat tile value | 9 characters |
+| Stat tile label | 5 words |
+| Stat tile note | 6 words |
 | Table cell | 5 words |
 | Chart read line | 10 words, 3 lines |
 | Image caption | 8 words |
 | Bottom banner | 14 words |
 
 If something does not fit, it goes in the speaker notes. Do not shrink the font.
+
+### Make it visual before you make it wordy
+
+A jury remembers a number and a picture. It does not remember a paragraph. Before you
+write any slide as text, ask what it could be instead.
+
+Work down this list and stop at the first that fits:
+
+1. **A number that moves.** Two or more values over time, or compared: make a chart.
+2. **A number that stands still.** One to four headline figures, especially a current
+   value against a target: use the `kpi` stat slide. This is the from-to slide.
+   "37.7% today, 80% by 2031" lands harder than any sentence about ambition.
+3. **A thing you can photograph.** A site, a bin, a mangrove, a kayak, a sorting
+   cabinet: show it. If the slide names a concrete object, the slide should show it.
+4. **A process or a comparison.** Steps, three options, a 2x2.
+5. **Only then, words.**
+
+For a twelve-slide pitch, aim for at least three slides carrying a chart or stat
+tiles, at least three carrying an image, and no more than two that are text alone. If
+you have built four text slides in a row, stop and tell the participant the deck has
+gone flat.
+
+Situation and complication almost always have numbers in them, so they almost always
+want `kpi` or `chart` rather than `statement`. Keep `statement` for when the point is
+a claim rather than a figure.
+
+On every slide, ask for the number behind the claim. "Demand is rising" is a sentence.
+"Demand grows 9% a year while the network grows 2%" is a chart.
+
+### The stat slide
+
+`kpi` takes two to four stats. Each has a `value`, a `label`, an optional `target` and
+an optional `note`. With a target it renders as the number today, an arrow, and the
+number required, which is the single most useful slide in this deck.
+
+```
+archetype: kpi
+stats:
+  - value: "37.7%"
+    target: "80%"
+    label: "Waste diverted from landfill"
+    note: "2025 actual, 2031 target"
+    highlight: true
+```
+
+### Naming the picture
+
+When a slide needs an image, name the exact subject rather than asking for "an image".
+Say what should be in frame: "a kitchen bin with two compartments", "mangrove seedlings
+in a nursery tray", "a kayak trail through mangroves at low tide". A participant can
+find or take that. "An image for this slide" gets them nothing.
+
+If the slide names a thing, show that thing.
 
 ### Images
 
@@ -182,8 +236,9 @@ Relative paths are read from the folder the storyline file is in.
 
 ### Charts, when the team has data
 
-If the team provides numbers, chart them rather than listing them. If they give you
-three numbers in a sentence, a chart is overkill, so leave it in the text.
+If the team provides numbers, chart them rather than listing them. Two or three
+headline figures are not a chart, they are a `kpi` stat slide. A single number in a
+sentence is a wasted number.
 
 Chart rules, which the builder applies:
 
@@ -280,7 +335,9 @@ Check, in this order:
    at the bottom. Nothing in a colour outside the template palette.
 7. **Images and charts.** Every image has a named licence in the source line and no
    identifiable people. Every chart has a unit, a read, and no second y-axis.
-8. **Leftovers.** Placeholder text, "TBD", lorem ipsum, image placeholders still empty.
+8. **Visual balance.** Count the content slides carrying a chart, stat tiles or an
+   image. If fewer than half do, say so and name which slides should change, to what.
+9. **Leftovers.** Placeholder text, "TBD", lorem ipsum, image placeholders still empty.
 
 End with the three changes that would most improve the pitch, in order.
 
@@ -295,6 +352,7 @@ End with the three changes that would most improve the pitch, in order.
 - Never use an image you cannot name a licence for.
 - Never override the chart colours. They have been checked for colour-blind readers.
 - Detail the jury might ask about belongs in speaker notes or backup slides.
+- A number buried in a sentence is a wasted number. Chart it or put it on a stat tile.
 
 ---
 
@@ -303,7 +361,9 @@ End with the three changes that would most improve the pitch, in order.
 How to use the tiers below:
 
 - **Tier 1, the brief.** Situation, complication, key facts, sources. This was given
-  to every group. Pre-fill slides 3 and 4 with it. Tell them it is pre-filled and ask
+  to every group. Pre-fill slides 3 and 4 with it. Tier 1b turns that same material
+  into a stat slide, a chart and a list of image subjects. Use 1b by default: the
+  numbers are the point, and they are wasted inside a sentence. Tell them it is pre-filled and ask
   them to change it if their work has moved on.
 - **Tier 2, the question.** The first draft and the SMART version. The group writes
   their own. Use this to test theirs against the five tests and name what is missing.
@@ -335,6 +395,30 @@ Group 2. Sector: Environment Quality.
 - Statement: The authorities cannot predict the next spike or say which neighbourhoods breathe the worst of it.
 - Key facts: Greening, traffic limits and industry caps all compete · Desert dust is treated as beyond control · Residents get no warning before a spike
 - Source: EAD Air Quality Report 2022 and source study; Beijing EEB (2025)
+
+### Tier 1b, the visuals
+
+Build slide 3 as a `kpi` stat slide, not as text. These three stats are ready to use:
+
+  - 32 to 5 — PM2.5 micrograms per cubic metre (2024 average against the WHO guideline)
+  - 22 — EAD monitoring stations (20 fixed and 2 mobile)
+  - 48h — Warning residents get today (None)
+
+- Banner line: The monitoring exists. The warning does not.
+
+For slide 4, a chart carries it better than a sentence:
+
+- Title: Two thirds of Abu Dhabi's fine dust comes from outside the city or the desert
+- Unit: Share of PM2.5
+- Categories: Blown in from outside, Desert dust, Everything else
+- Values: 40, 25, 35
+- Read: 40% is human-made pollution from outside · 25% is desert dust · Only the remainder is clearly local to act on
+
+Image subjects to ask for, in this order:
+
+  - an air quality monitoring station in open desert
+  - the Abu Dhabi skyline on a dusty day
+  - a classroom air purifier
 
 ### Tier 2, the question
 

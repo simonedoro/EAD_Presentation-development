@@ -18,29 +18,45 @@ slides:
   - What we need decided
   source: Your group
 - role: situation
-  archetype: statement
+  archetype: kpi
   title: The UAE has pledged 100 million mangroves by 2030 and has planted 44 million
-  statement: Planting is running at pace, and every seedling that goes in the ground is counted.
-  points_heading: Key facts
-  points:
-  - 100 million mangroves pledged by 2030
-  - Around 44 million already in the ground
-  - Debate focuses on species, nurseries and irrigation
   source: The National (Dec 2023; Mar 2026); Abu Dhabi Mangrove Initiative (2023)
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  stats:
+  - value: 44M
+    target: 100M
+    label: Mangroves planted against the pledge
+    note: By 2030
+    highlight: true
+  - value: 28%
+    label: Seedlings alive after two years
+    note: At one Fujairah site
+  - value: 6M
+    label: Seeds sown by drone in 2023
+    note: Survival unmeasured
+  takeaway: Planting is counted. Survival is not.
+  notes: Pre-filled from the challenge brief. Change it if your work has moved on. The jury knows this
+    material, so spend your time on what you add to it.
 - role: complication
-  archetype: statement
-  title: Planting is counted carefully, survival is barely counted at all
-  statement: At one Fujairah site only 28% of seedlings were alive after two years. The rest are unknown.
-  points_heading: Key facts
-  points:
-  - 28% survival after two years at one site
-  - No survival figure exists for most sites
-  - Faster planting is treated as the priority
+  archetype: chart
+  title: Fewer than three in ten seedlings were alive two years after planting
   source: The National (Mar 2026); EAD Mangrove Restoration Guidelines
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  chart_type: bar
+  unit: Share of seedlings at one site
+  categories:
+  - Alive after two years
+  - Lost
+  series:
+  - name: Share
+    values:
+    - 28
+    - 72
+  read_heading: What this says
+  read:
+  - 28% survived at the one site measured
+  - No survival figure exists for the rest
+  - The pledge counts planting, not trees that live
+  notes: Pre-filled from the challenge brief. If you have better numbers, use yours and say where they
+    came from.
 - role: problem
   archetype: statement
   title: Write your problem statement here, as a question to be answered
@@ -56,17 +72,26 @@ slides:
     bullets:
     - Why it works
     - What makes it different
+    image: images/mangrove-seedlings-in-a-nursery-tray.jpg
+    image_note: mangrove seedlings in a nursery tray
   - heading: Initiative two
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/a-drone-sowing-mangrove-seeds-over-a-tidal-flat.jpg
+    image_note: a drone sowing mangrove seeds over a tidal flat
   - heading: Initiative three
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/an-aerial-view-of-a-mangrove-stand.jpg
+    image_note: an aerial view of a mangrove stand
   takeaway: One line on what the three have in common
+  notes: 'Image subjects to find: mangrove seedlings in a nursery tray; a drone sowing mangrove seeds
+    over a tidal flat; an aerial view of a mangrove stand. Drop the files into an images folder next to
+    this deck, or replace the placeholders in PowerPoint.'
 - role: initiative
   archetype: initiative
   name: Initiative one
@@ -81,6 +106,8 @@ slides:
     only if it genuinely needs the room.
 
     '
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative two
@@ -91,6 +118,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative three
@@ -101,6 +130,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: recap
   archetype: table
   title: Summarise all three here, with the impact and what each one costs

@@ -74,9 +74,8 @@ Rules on the structure:
   closing slide then pulls the asks together with a date.
 - Anything the jury might ask about but that does not fit goes in the speaker notes,
   or in backup slides after the ask. Do not crowd the main slides.
-- Situation and complication can be a chart or a picture slide instead of text when
-  the evidence is a number or a site. Use that rather than describing the picture in
-  words.
+- Situation and complication should be stat tiles, a chart or a picture whenever the
+  evidence is a number or a place. Text is the fallback, not the default.
 
 ## Step 3. Challenge and sector
 
@@ -146,12 +145,68 @@ expect. Stay inside these or the text will not fit.
 | Box bullet | 8 words, 3 bullets per box |
 | Initiative description | 35 words |
 | Initiative "how", "needs", "impact", "risk" | 18 words each |
+| Stat tile value | 9 characters |
+| Stat tile label | 5 words |
+| Stat tile note | 6 words |
 | Table cell | 5 words |
 | Chart read line | 10 words, 3 lines |
 | Image caption | 8 words |
 | Bottom banner | 14 words |
 
 If something does not fit, it goes in the speaker notes. Do not shrink the font.
+
+### Make it visual before you make it wordy
+
+A jury remembers a number and a picture. It does not remember a paragraph. Before you
+write any slide as text, ask what it could be instead.
+
+Work down this list and stop at the first that fits:
+
+1. **A number that moves.** Two or more values over time, or compared: make a chart.
+2. **A number that stands still.** One to four headline figures, especially a current
+   value against a target: use the `kpi` stat slide. This is the from-to slide.
+   "37.7% today, 80% by 2031" lands harder than any sentence about ambition.
+3. **A thing you can photograph.** A site, a bin, a mangrove, a kayak, a sorting
+   cabinet: show it. If the slide names a concrete object, the slide should show it.
+4. **A process or a comparison.** Steps, three options, a 2x2.
+5. **Only then, words.**
+
+For a twelve-slide pitch, aim for at least three slides carrying a chart or stat
+tiles, at least three carrying an image, and no more than two that are text alone. If
+you have built four text slides in a row, stop and tell the participant the deck has
+gone flat.
+
+Situation and complication almost always have numbers in them, so they almost always
+want `kpi` or `chart` rather than `statement`. Keep `statement` for when the point is
+a claim rather than a figure.
+
+On every slide, ask for the number behind the claim. "Demand is rising" is a sentence.
+"Demand grows 9% a year while the network grows 2%" is a chart.
+
+### The stat slide
+
+`kpi` takes two to four stats. Each has a `value`, a `label`, an optional `target` and
+an optional `note`. With a target it renders as the number today, an arrow, and the
+number required, which is the single most useful slide in this deck.
+
+```
+archetype: kpi
+stats:
+  - value: "37.7%"
+    target: "80%"
+    label: "Waste diverted from landfill"
+    note: "2025 actual, 2031 target"
+    highlight: true
+```
+
+### Naming the picture
+
+When a slide needs an image, name the exact subject rather than asking for "an image".
+Say what should be in frame: "a kitchen bin with two compartments", "mangrove seedlings
+in a nursery tray", "a kayak trail through mangroves at low tide". A participant can
+find or take that. "An image for this slide" gets them nothing.
+
+If the slide names a thing, show that thing.
 
 ### Images
 
@@ -182,8 +237,9 @@ Relative paths are read from the folder the storyline file is in.
 
 ### Charts, when the team has data
 
-If the team provides numbers, chart them rather than listing them. If they give you
-three numbers in a sentence, a chart is overkill, so leave it in the text.
+If the team provides numbers, chart them rather than listing them. Two or three
+headline figures are not a chart, they are a `kpi` stat slide. A single number in a
+sentence is a wasted number.
 
 Chart rules, which the builder applies:
 
@@ -280,7 +336,9 @@ Check, in this order:
    at the bottom. Nothing in a colour outside the template palette.
 7. **Images and charts.** Every image has a named licence in the source line and no
    identifiable people. Every chart has a unit, a read, and no second y-axis.
-8. **Leftovers.** Placeholder text, "TBD", lorem ipsum, image placeholders still empty.
+8. **Visual balance.** Count the content slides carrying a chart, stat tiles or an
+   image. If fewer than half do, say so and name which slides should change, to what.
+9. **Leftovers.** Placeholder text, "TBD", lorem ipsum, image placeholders still empty.
 
 End with the three changes that would most improve the pitch, in order.
 
@@ -295,3 +353,4 @@ End with the three changes that would most improve the pitch, in order.
 - Never use an image you cannot name a licence for.
 - Never override the chart colours. They have been checked for colour-blind readers.
 - Detail the jury might ask about belongs in speaker notes or backup slides.
+- A number buried in a sentence is a wasted number. Chart it or put it on a stat tile.

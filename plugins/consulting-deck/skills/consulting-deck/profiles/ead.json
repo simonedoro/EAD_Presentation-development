@@ -3,79 +3,129 @@
   "label": "Environment Agency - Abu Dhabi",
   "template": "templates/EAD Template.potx",
   "font": "Arial",
-  "slide": { "w": 13.333, "h": 7.5 },
-
+  "slide": {
+    "w": 13.333,
+    "h": 7.5
+  },
   "title": {
-    "x": 0.917, "y": 0.399, "w": 11.5, "h": 1.049,
-    "size": 22, "bold": true, "color": "1A1A1A",
-    "warn_chars": 100, "max_chars": 115
+    "x": 0.917,
+    "y": 0.399,
+    "w": 11.5,
+    "h": 1.049,
+    "size": 22,
+    "bold": true,
+    "color": "1A1A1A",
+    "warn_chars": 100,
+    "max_chars": 115
   },
-
-  "content": { "x": 0.917, "y": 1.729, "w": 11.5, "h": 4.82 },
-
+  "content": {
+    "x": 0.917,
+    "y": 1.729,
+    "w": 11.5,
+    "h": 4.82
+  },
   "source": {
-    "x": 0.917, "y": 6.60, "w": 8.4, "h": 0.22,
-    "size": 9, "color": "7F7F7F", "prefix": "Source: "
+    "x": 0.917,
+    "y": 6.6,
+    "w": 8.4,
+    "h": 0.22,
+    "size": 9,
+    "color": "7F7F7F",
+    "prefix": "Source: "
   },
-
   "type": {
-    "statement":    20,
+    "statement": 20,
     "statement_sub": 14,
-    "bullet":       15,
-    "col_heading":  14,
-    "col_lead":     12.5,
-    "col_bullet":   12.5,
+    "bullet": 15,
+    "col_heading": 14,
+    "col_lead": 12.5,
+    "col_bullet": 12.5,
     "card_heading": 13.5,
-    "card_text":    12.5,
+    "card_text": 12.5,
     "step_heading": 12.5,
-    "step_text":    11.5,
+    "step_text": 11.5,
     "quad_heading": 13,
-    "quad_text":    12,
+    "quad_text": 12,
     "table_header": 12,
-    "table_body":   11.5,
-    "agenda_item":  14,
-    "takeaway":     13,
-    "chart_read":   12,
-    "label":        11
+    "table_body": 11.5,
+    "agenda_item": 14,
+    "takeaway": 13,
+    "chart_read": 12,
+    "label": 11,
+    "kpi_value": 34
   },
-
   "layouts": {
-    "cover":       "Title or Divider Corporate 1",
-    "section":     "Title or Divider Corporate 2",
-    "agenda":      "Contents Green",
-    "content":     "Content Blank Green",
+    "cover": "Title or Divider Corporate 1",
+    "section": "Title or Divider Corporate 2",
+    "agenda": "Contents Green",
+    "content": "Content Blank Green",
     "content_two": "Double Block Content Green",
-    "picture":     "Picture & Text Content Blue"
+    "picture": "Picture & Text Content Blue"
   },
-
   "cover": {
     "on_dark": true,
-    "title":    { "x": 0.46, "y": 2.39, "w": 6.21, "h": 1.05, "size": 28, "color": "FFFFFF" },
-    "subtitle": { "x": 0.47, "y": 3.97, "w": 6.21, "h": 0.47, "size": 14, "color": "FFFFFF" },
-    "date":     { "x": 0.47, "y": 4.63, "w": 5.09, "h": 0.40, "size": 11, "color": "D7E4DD" }
+    "title": {
+      "x": 0.46,
+      "y": 2.39,
+      "w": 6.21,
+      "h": 1.05,
+      "size": 28,
+      "color": "FFFFFF"
+    },
+    "subtitle": {
+      "x": 0.47,
+      "y": 3.97,
+      "w": 6.21,
+      "h": 0.47,
+      "size": 14,
+      "color": "FFFFFF"
+    },
+    "date": {
+      "x": 0.47,
+      "y": 4.63,
+      "w": 5.09,
+      "h": 0.4,
+      "size": 11,
+      "color": "D7E4DD"
+    }
   },
-
   "section": {
     "on_dark": true,
-    "title":    { "x": 0.46, "y": 2.39, "w": 6.21, "h": 1.05, "size": 24, "color": "FFFFFF" },
-    "subtitle": { "x": 0.47, "y": 3.97, "w": 6.21, "h": 0.47, "size": 14, "color": "D7E4DD" }
+    "title": {
+      "x": 0.46,
+      "y": 2.39,
+      "w": 6.21,
+      "h": 1.05,
+      "size": 24,
+      "color": "FFFFFF"
+    },
+    "subtitle": {
+      "x": 0.47,
+      "y": 3.97,
+      "w": 6.21,
+      "h": 0.47,
+      "size": 14,
+      "color": "D7E4DD"
+    }
   },
-
-  "chart_palette": ["007749", "2E7DB8", "C06A2E", "9AA84F"],
-
+  "chart_palette": [
+    "007749",
+    "2E7DB8",
+    "C06A2E",
+    "9AA84F"
+  ],
   "colors": {
-    "primary":   "007749",
+    "primary": "007749",
     "secondary": "004B87",
-    "accent":    "006269",
-    "muted":     "869CAE",
-    "ink":       "1A1A1A",
-    "subink":    "595959",
-    "rule":      "D9D9D9",
-    "panel":     "F1F6F3",
+    "accent": "006269",
+    "muted": "869CAE",
+    "ink": "1A1A1A",
+    "subink": "595959",
+    "rule": "D9D9D9",
+    "panel": "F1F6F3",
     "panel_alt": "EAF0F5",
-    "white":     "FFFFFF"
+    "white": "FFFFFF"
   },
-
   "notes": [
     "Title placeholder in the .potx inherits 32pt Arial from the master. The builder overrides it to 20pt so a two-line action title fits the 1.049in box.",
     "Content region stops at y=6.549 so the source line at y=6.60 clears the 'Environment Agency - Abu Dhabi' footer at y=7.00 and the page number at y=6.951.",

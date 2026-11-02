@@ -18,30 +18,46 @@ slides:
   - What we need decided
   source: Your group
 - role: situation
-  archetype: statement
+  archetype: kpi
   title: The UAE has committed $163 billion to net zero against a need near $680 billion
-  statement: Public commitment covers roughly a quarter of what the transition is estimated to cost.
-  points_heading: Key facts
-  points:
-  - $163 billion committed by the UAE
-  - $680 billion is the estimated total need
-  - Alterra aims to draw $250 billion by 2030
   source: US State Dept (2024); Standard Chartered via BCG (2022)
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  stats:
+  - value: $163B
+    target: $680B
+    label: Committed against total need
+    note: UAE net-zero path
+    highlight: true
+  - value: $30B
+    target: $250B
+    label: Alterra fund and its 2030 draw
+    note: Climate fund leverage target
+  - value: 4x
+    label: The size of the gap
+    note: Need against commitment
+  takeaway: Public money cannot close a gap four times its size.
+  notes: Pre-filled from the challenge brief. Change it if your work has moved on. The jury knows this
+    material, so spend your time on what you add to it.
 - role: complication
-  archetype: statement
-  title: Private capital holds the money but sees little reason to deploy it
-  statement: Without a carbon price or a clear return, climate projects lose to everything else on the
-    balance sheet.
-  points_heading: Key facts
-  points:
-  - Public money alone cannot close a gap that size
-  - Blame falls on immature technology and weak disclosure
-  - Private companies hold most of the capital
+  archetype: chart
+  title: Public commitment covers about a quarter of what the transition needs
   source: CNBC (Aug 2026); UK Green Investment Bank (2015)
-  notes: Taken from the challenge brief. Check it, and change it if your work has moved on. The jury knows
-    this material, so spend your time on what you add to it.
+  chart_type: bar
+  unit: US$ billion
+  categories:
+  - Committed
+  - Still needed
+  series:
+  - name: US$ billion
+    values:
+    - 163
+    - 517
+  read_heading: What this says
+  read:
+  - $163 billion committed so far
+  - $680 billion is the estimated need
+  - The remainder has to come from private capital
+  notes: Pre-filled from the challenge brief. If you have better numbers, use yours and say where they
+    came from.
 - role: problem
   archetype: statement
   title: Write your problem statement here, as a question to be answered
@@ -57,17 +73,26 @@ slides:
     bullets:
     - Why it works
     - What makes it different
+    image: images/a-solar-farm-under-construction-in-the-desert.jpg
+    image_note: a solar farm under construction in the desert
   - heading: Initiative two
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/the-ADGM-financial-district.jpg
+    image_note: the ADGM financial district
   - heading: Initiative three
     lead: One line on what it is
     bullets:
     - Why it works
     - What makes it different
+    image: images/a-wind-and-battery-storage-site.jpg
+    image_note: a wind and battery storage site
   takeaway: One line on what the three have in common
+  notes: 'Image subjects to find: a solar farm under construction in the desert; the ADGM financial district;
+    a wind and battery storage site. Drop the files into an images folder next to this deck, or replace
+    the placeholders in PowerPoint.'
 - role: initiative
   archetype: initiative
   name: Initiative one
@@ -82,6 +107,8 @@ slides:
     only if it genuinely needs the room.
 
     '
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative two
@@ -92,6 +119,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: initiative
   archetype: initiative
   name: Initiative three
@@ -102,6 +131,8 @@ slides:
   impact: What changes if it works. Put a number on it.
   risk: The thing most likely to go wrong, and what you would do about it.
   source: Your group analysis
+  image: images/your-initiative-photo.jpg
+  image_note: a photo, diagram or mock-up of this initiative
 - role: recap
   archetype: table
   title: Summarise all three here, with the impact and what each one costs

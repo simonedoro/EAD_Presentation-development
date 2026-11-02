@@ -60,10 +60,14 @@ the same instructions without a case attached, if you want the generic version.
 template. Download the one for your challenge and open it in PowerPoint.
 
 Each starter deck has the eleven slides of the pitch in order, with prompts where
-your content goes. The situation and complication slides are already filled in from
-the challenge brief, with the key facts and sources. Check them, change them if your
-work has moved on, and spend your time on what you add to the problem rather than on
-restating it.
+your content goes. Your situation slide is already built as headline numbers, current
+against target, and your complication slide as a chart, both from the challenge brief
+with sources. Check them, change them if your work has moved on, and spend your time
+on what you add to the problem rather than on restating it.
+
+Image placeholders name what should be in the picture, for example "a two-compartment
+kitchen bin in use". Find or take those three photos, or ask the skill to find
+licensed ones for you.
 
 `EAD Template (empty).pptx` in the same folder is the blank template, if you would
 rather start from nothing.
