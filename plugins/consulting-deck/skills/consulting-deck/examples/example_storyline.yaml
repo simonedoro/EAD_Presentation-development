@@ -1,5 +1,8 @@
 # Innovation bootcamp pitch deck. Worked example.
 #
+# WARNING: every number, site and finding below is invented to show the layout.
+# None of it is EAD data. Do not quote any of it. Replace all of it with your own.
+#
 # Dot N in the storyline becomes slide N. Every slide carries a role, which fixes
 # where it sits in the pitch, and an archetype, which fixes how it looks.
 # Roles in order: cover, agenda, situation, complication, problem, solutions,
@@ -42,7 +45,7 @@ slides:
       - "Treatment plants run at 82% of capacity"
       - "Reuse network reaches 11 of 34 districts"
       - "The rest discharges to sea"
-    source: "EAD internal data, 2026"
+    source: "Illustrative figures, invented for this example"
     notes: >
       Jury will ask for the split by emirate. Treatment is centralised in three
       plants; the reuse network was built district by district as budget allowed,
@@ -58,7 +61,7 @@ slides:
       - "Pipe extension costs AED 4.2m per kilometre"
       - "New districts approved faster than pipe is laid"
       - "Desalinated water fills the gap at four times the cost"
-    source: "EAD internal data, 2026"
+    source: "Illustrative figures, invented for this example"
 
   # 5
   - role: problem
@@ -173,7 +176,7 @@ slides:
   - role: backup
     archetype: chart
     title: "Reuse volume has flattened while treated volume keeps climbing"
-    source: "EAD internal data, 2022 to 2026"
+    source: "Illustrative figures, invented for this example"
     chart_type: bar
     unit: "Million litres a day"
     categories: ["2022", "2023", "2024", "2025", "2026"]
@@ -192,7 +195,7 @@ slides:
   - role: backup
     archetype: visual
     title: "The Al Wathba site already has the land and the gradient a reed bed needs"
-    source: "Site survey, October 2026"
+    source: "Illustrative example, not a real site survey"
     image: "images/reedbed.png"
     caption: "Al Wathba outfall, looking east"
     points_heading: "Why this site"
