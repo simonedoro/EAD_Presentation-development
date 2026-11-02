@@ -37,7 +37,8 @@ except ImportError:
 EMU_IN = 914400
 ARCHETYPES = (
     "cover", "section", "agenda", "statement", "kpi", "bullets", "columns",
-    "cards", "steps", "initiative", "visual", "matrix", "table", "chart",
+    "cards", "steps", "initiative", "visual", "exhibit", "matrix", "table",
+    "chart",
 )
 
 # The innovation bootcamp pitch deck. Each entry is (role, allowed archetypes,
@@ -47,15 +48,16 @@ BOOTCAMP_SKELETON = [
     ("cover",        ("cover",),                                   True),
     ("agenda",       ("agenda", "bullets", "statement"),           True),
     ("situation",    ("statement", "kpi", "bullets", "chart", "columns",
-                     "visual"),                                   True),
+                     "visual", "exhibit"),                                   True),
     ("complication", ("statement", "kpi", "bullets", "chart", "columns",
-                     "visual"),                                   True),
+                     "visual", "exhibit"),                                   True),
     ("problem",      ("statement",),                               True),
     ("solutions",    ("columns",),                                 True),
     ("initiative",   ("initiative", "columns", "steps", "chart",
-                     "visual"),                                   True),
-    ("recap",        ("table", "cards", "columns", "kpi"),         True),
-    ("ask",          ("cards", "steps", "bullets", "table"),       True),
+                     "visual", "exhibit"),                        True),
+    ("recap",        ("table", "cards", "columns", "kpi", "exhibit"), True),
+    ("ask",          ("cards", "steps", "bullets", "table",
+                     "exhibit"),                                  True),
 ]
 
 # Titles that announce a topic instead of making a point.
@@ -759,6 +761,220 @@ def a_visual(b, slide, spec):
                       size=b.sz("col_lead", 12.5), row_gap=0.18)
 
 
+def _draw_chart(b, slide, cfg, x, y, w, h):
+    """Native PowerPoint chart, consulting defaults. Shared by chart and exhibit."""
+    kinds = {
+        "bar": XL_CHART_TYPE.COLUMN_CLUSTERED,
+        "column": XL_CHART_TYPE.COLUMN_CLUSTERED,
+        "hbar": XL_CHART_TYPE.BAR_CLUSTERED,
+        "line": XL_CHART_TYPE.LINE_MARKERS,
+        "stacked": XL_CHART_TYPE.COLUMN_STACKED,
+    }
+    kind = kinds.get(cfg.get("chart_type", "bar"))
+    if kind is None:
+        die(f"unsupported chart_type '{cfg.get('chart_type')}'")
+    data = CategoryChartData()
+    data.categories = cfg["categories"]
+    for series in cfg["series"]:
+        data.add_series(series["name"], series["values"])
+    top = y + (0.26 if cfg.get("unit") else 0.0)
+    gf = slide.shapes.add_chart(kind, Inches(x), Inches(top), Inches(w),
+                                Inches(h - (0.26 if cfg.get("unit") else 0.0)), data)
+    chart = gf.chart
+    chart.font.name = b.font
+    chart.font.size = Pt(b.sz("table_body", 11.5))
+    chart.has_title = False
+    labels_on = cfg.get("data_labels", True)
+    try:
+        chart.value_axis.has_major_gridlines = False
+        chart.value_axis.visible = not labels_on
+        chart.value_axis.format.line.color.rgb = rgb(b.c["rule"])
+        chart.category_axis.format.line.color.rgb = rgb(b.c["rule"])
+        chart.category_axis.has_major_gridlines = False
+        chart.plots[0].gap_width = 80
+    except Exception:
+        pass
+    if len(cfg["series"]) > 1:
+        chart.has_legend = True
+        chart.legend.position = XL_LEGEND_POSITION.BOTTOM
+        chart.legend.include_in_layout = False
+        chart.legend.font.size = Pt(b.sz("label", 11))
+    else:
+        chart.has_legend = False
+    palette = b.p.get("chart_palette",
+                      [b.c["primary"], b.c["secondary"], b.c["accent"]])
+    if len(cfg["series"]) > len(palette):
+        die(f"{len(cfg['series'])} series but the palette has {len(palette)} slots")
+    for i, ser in enumerate(chart.series):
+        ser.format.fill.solid()
+        ser.format.fill.fore_color.rgb = rgb(palette[i])
+        ser.format.line.fill.background()
+        if labels_on:
+            try:
+                lb = ser.data_labels
+                lb.show_value = True
+                lb.number_format = cfg.get("number_format", "General")
+                lb.number_format_is_linked = False
+                lb.font.size = Pt(b.sz("label", 11) - 1)
+                lb.font.name = b.font
+                lb.font.bold = True
+                lb.font.color.rgb = rgb(b.c["ink"])
+            except Exception:
+                pass
+    if cfg.get("unit"):
+        b.text(slide, x, y, w, 0.24, cfg["unit"],
+               size=b.sz("label", 11) - 1, color=b.c["muted"])
+
+
+def _draw_table(b, slide, cfg, x, y, w, h):
+    header = cfg["header"]
+    rows = cfg["rows"]
+    head_h = 0.48
+    body_h = min(0.62, max(0.34, (h - head_h) / max(len(rows), 1)))
+    shape = slide.shapes.add_table(len(rows) + 1, len(header), Inches(x), Inches(y),
+                                   Inches(w), Inches(head_h + body_h * len(rows)))
+    tbl = shape.table
+    tbl.rows[0].height = Inches(head_h)
+    for i in range(1, len(rows) + 1):
+        tbl.rows[i].height = Inches(body_h)
+    if cfg.get("col_widths"):
+        tot = sum(cfg["col_widths"])
+        for i, wt in enumerate(cfg["col_widths"]):
+            tbl.columns[i].width = Inches(w * wt / tot)
+    for j, label in enumerate(header):
+        cell = tbl.cell(0, j)
+        cell.text = str(label)
+        cell.fill.solid()
+        cell.fill.fore_color.rgb = rgb(b.c["primary"])
+        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
+        pr = cell.text_frame.paragraphs[0]
+        pr.font.name = b.font
+        pr.font.size = Pt(b.sz("table_header", 12))
+        pr.font.bold = True
+        pr.font.color.rgb = rgb(b.c["white"])
+    for i, row in enumerate(rows, start=1):
+        for j, val in enumerate(row):
+            cell = tbl.cell(i, j)
+            cell.text = "" if val is None else str(val)
+            cell.fill.solid()
+            cell.fill.fore_color.rgb = rgb(b.c["white"] if i % 2 else b.c["panel"])
+            cell.vertical_anchor = MSO_ANCHOR.MIDDLE
+            pr = cell.text_frame.paragraphs[0]
+            pr.font.name = b.font
+            pr.font.size = Pt(b.sz("table_body", 11.5))
+            pr.font.color.rgb = rgb(b.c["ink"])
+
+
+def _draw_stats(b, slide, stats, x, y, w, h):
+    """Stat tiles stacked vertically, for the evidence half of an exhibit."""
+    n = len(stats)
+    gap = 0.18
+    th = (h - gap * (n - 1)) / n
+    big = b.sz("kpi_value", 34) * (0.8 if n > 2 else 1.0)
+    for i, st in enumerate(stats):
+        ty = y + i * (th + gap)
+        hi = bool(st.get("highlight"))
+        b.rect(slide, x, ty, w, th,
+               fill=b.c["panel"] if hi else b.c["white"],
+               line=None if hi else b.c["rule"])
+        b.rect(slide, x, ty, 0.055, th, fill=b.c["primary"])
+        parts = [(st["value"], big, b.c["primary"], True)]
+        if st.get("target"):
+            parts.append(("  \u2192  ", big * 0.6, b.c["muted"], False))
+            parts.append((st["target"], big, b.c["secondary"], True))
+        b.rich_line(slide, x + 0.30, ty, w * 0.42, th, parts, align=PP_ALIGN.LEFT)
+        lx = x + 0.30 + w * 0.42 + 0.20
+        lw = w - (lx - x) - 0.26
+        lab = b.sz("col_heading", 14)
+        note = b.sz("col_lead", 12.5)
+        lh = max(0.28, est_height(st.get("label", ""), lw, lab, bold=True))
+        nh = max(0.24, est_height(st.get("note", ""), lw, note)) if st.get("note") else 0
+        inner = lh + (0.06 + nh if nh else 0)
+        ty2 = ty + max(0.10, (th - inner) / 2)
+        b.text(slide, lx, ty2, lw, lh, st.get("label", ""), size=lab, bold=True,
+               color=b.c["ink"])
+        if nh:
+            b.text(slide, lx, ty2 + lh + 0.06, lw, nh, st["note"], size=note,
+                   color=b.c["subink"])
+
+
+def _draw_insights(b, slide, spec, x, y, w, h):
+    """The right rail: what the evidence means."""
+    b.rect(slide, x, y, w, h, fill=b.c["panel"])
+    b.rect(slide, x, y, w, 0.055, fill=b.c["primary"])
+    pad = 0.26
+    lab = b.sz("col_heading", 14)
+    body = b.sz("col_lead", 12.5)
+    cy = y + pad + 0.06
+    heading = spec.get("insight_heading", "What this means")
+    b.text(slide, x + pad, cy, w - 2 * pad, 0.30, heading,
+           size=lab, bold=True, color=b.c["primary"])
+    cy += 0.44
+
+    items = spec.get("insights") or []
+    numbered = spec.get("numbered", True)
+    for i, item in enumerate(items, start=1):
+        if isinstance(item, str):
+            item = {"text": item}
+        tx = x + pad + (0.46 if numbered else 0.26)
+        tw = w - (tx - x) - pad
+        head = item.get("heading")
+        text = item.get("text", "")
+        hh = max(0.26, est_height(head, tw, body, bold=True)) if head else 0
+        th_ = max(0.24, est_height(text, tw, body)) if text else 0
+        block_h = hh + (0.05 if hh and th_ else 0) + th_
+        if numbered:
+            b.rect(slide, x + pad, cy + 0.02, 0.32, 0.32,
+                   fill=b.c["primary"], shape=MSO_SHAPE.OVAL)
+            b.text(slide, x + pad, cy + 0.02, 0.32, 0.32, str(i),
+                   size=body - 1.5, bold=True, color=b.c["white"],
+                   align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+        else:
+            b.rect(slide, x + pad + 0.02, cy + 0.10, 0.09, 0.09, fill=b.c["primary"])
+        if head:
+            b.text(slide, tx, cy, tw, hh, head, size=body, bold=True, color=b.c["ink"])
+        if text:
+            b.text(slide, tx, cy + (hh + 0.05 if hh else 0), tw, th_, text,
+                   size=body, color=b.c["subink"] if head else b.c["ink"])
+        cy += block_h + 0.22
+
+
+def a_exhibit(b, slide, spec):
+    """Evidence on the left, what it means on the right, action title on top.
+
+    The standard consulting exhibit. The left half takes a chart, a table, stat
+    tiles or an image. The right rail carries two to four insights.
+    """
+    b.strip_placeholders(slide, keep_title=True)
+    b.set_title(slide, spec["title"])
+    r = b.content_region(bool(spec.get("takeaway")))
+    split = float(spec.get("split", 0.62))
+    lw = r["w"] * split
+    rx = r["x"] + lw + 0.40
+    rw = r["w"] - lw - 0.40
+
+    left = spec.get("left") or {}
+    kind = left.get("type", "chart")
+    if kind == "chart":
+        _draw_chart(b, slide, left, r["x"], r["y"], lw, r["h"])
+    elif kind == "table":
+        _draw_table(b, slide, left, r["x"], r["y"], lw, r["h"])
+    elif kind == "stats":
+        _draw_stats(b, slide, left["stats"], r["x"], r["y"], lw, r["h"])
+    elif kind == "image":
+        cap = left.get("caption")
+        ih = r["h"] - (0.30 if cap else 0.0)
+        place_image(b, slide, left.get("image"), r["x"], r["y"], lw, ih,
+                    left.get("image_note") or "image")
+        if cap:
+            b.text(slide, r["x"], r["y"] + ih + 0.06, lw, 0.24, cap,
+                   size=b.sz("label", 11) - 1, color=b.c["muted"])
+    else:
+        die(f"exhibit left type '{kind}' is not one of chart, table, stats, image")
+
+    _draw_insights(b, slide, spec, rx, r["y"], rw, r["h"])
+
+
 def a_matrix(b, slide, spec):
     b.strip_placeholders(slide, keep_title=True)
     b.set_title(slide, spec["title"])
@@ -943,7 +1159,8 @@ RENDERERS = {
     "statement": a_statement, "kpi": a_kpi, "bullets": a_bullets,
     "columns": a_columns,
     "cards": a_cards, "steps": a_steps, "initiative": a_initiative,
-    "visual": a_visual, "matrix": a_matrix, "table": a_table,
+    "visual": a_visual, "exhibit": a_exhibit, "matrix": a_matrix,
+    "table": a_table,
     "chart": a_chart,
 }
 
@@ -955,7 +1172,8 @@ LAYOUT_FOR = {
     "statement": "content", "kpi": "content", "bullets": "content",
     "columns": "content",
     "cards": "content", "steps": "content", "initiative": "content",
-    "visual": "content", "matrix": "content", "table": "content",
+    "visual": "content", "exhibit": "content", "matrix": "content",
+    "table": "content",
     "chart": "content",
 }
 
@@ -1048,6 +1266,12 @@ def validate(spec, profile):
             for t in st:
                 if not t.get("value") or not t.get("label"):
                     errors.append(f"slide {i}: every stat needs a value and a label")
+        if arch == "exhibit":
+            n = len(s.get("insights") or [])
+            if not 2 <= n <= 4:
+                errors.append(f"slide {i}: an exhibit takes 2 to 4 insights, got {n}")
+            if not s.get("left"):
+                errors.append(f"slide {i}: an exhibit needs a 'left' block")
         if arch == "visual" and not s.get("image"):
             errors.append(f"slide {i}: a visual slide needs an image")
         if arch == "agenda" and not s.get("items"):

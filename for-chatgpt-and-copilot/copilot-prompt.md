@@ -84,6 +84,23 @@ the master, never move the logo, the green rule or the footer.
 Give me one slide at a time so I can check it. Use the template's own green and blue.
 Every content slide carries a source line at the bottom.
 
+## The shape of a content slide
+
+Most slides should use the same shape, the standard consulting exhibit:
+
+- The action title on top, saying the point as a sentence.
+- The evidence on the left, about 60% of the width: a chart, a table, big numbers or
+  a photo. This is what proves the title.
+- What it means on the right: two to four numbered insights. Not a description of the
+  chart. What I should conclude and do.
+- One line at the foot when there is a single thing to remember.
+
+Left says what is true, right says so what, the title says the answer. If I cannot
+write the right-hand rail, the slide has no point and should be cut.
+
+Push me on the right rail. "Recycling is 37.7%" is a caption. "More capacity will not
+help, because the input is contaminated" is an insight.
+
 ## Make it visual before you make it wordy
 
 A jury remembers a number and a picture. It does not remember a paragraph. Before you

@@ -1,0 +1,241 @@
+# Executive template. Every content slide is an exhibit: evidence on the left,
+# what it means on the right, the action title on top saying the point.
+#
+# Replace the placeholder numbers with yours. Keep the shape.
+
+meta:
+  deck: "Executive starter deck"
+
+slides:
+
+  - role: cover
+    archetype: cover
+    title: "Your project title"
+    category: "Your challenge"
+    sector: "Your sector"
+    team: "Your group"
+    date: "November 2026"
+
+  - role: agenda
+    archetype: agenda
+    title: "Replace this with your agenda, or with your objective for the meeting"
+    current: 1
+    items:
+      - "The problem, in numbers"
+      - "Three initiatives we propose"
+      - "What we need decided today"
+    source: "Your group"
+
+  - role: situation
+    archetype: exhibit
+    title: "State the situation here as a fact, with the number that sizes it"
+    source: "Where these numbers came from"
+    split: 0.60
+    left:
+      type: stats
+      stats:
+        - value: "00%"
+          target: "00%"
+          label: "The headline measure"
+          note: "Today against the target"
+          highlight: true
+        - value: "000"
+          label: "The second number that matters"
+          note: "What it counts"
+        - value: "Date"
+          label: "The deadline or the milestone"
+          note: "What happens then"
+    insight_heading: "What this means"
+    insights:
+      - heading: "The gap is the story"
+        text: "Say how far today is from the target, in one line."
+      - heading: "It is not going to close itself"
+        text: "Say what would have to change for the gap to close on current plans."
+      - heading: "Someone owns this today"
+        text: "Name who, and what they do now."
+    takeaway: "One line the jury should remember from this slide"
+    notes: >
+      Evidence left, meaning right. The title says the point, the left proves it,
+      the right tells the reader what to do with it.
+
+  - role: complication
+    archetype: exhibit
+    title: "State what changed, and show the number that proves it changed"
+    source: "Where these numbers came from"
+    split: 0.62
+    left:
+      type: chart
+      chart_type: bar
+      unit: "Your unit, for example %"
+      categories: ["Category one", "Category two", "Category three"]
+      series:
+        - name: "Your measure"
+          values: [40, 25, 35]
+    insight_heading: "What this says"
+    insights:
+      - heading: "The biggest share is here"
+        text: "Point at the bar that matters and say why it matters."
+      - heading: "This is the part we control"
+        text: "Separate what can be acted on from what cannot."
+      - heading: "Doing nothing has a cost"
+        text: "Put a number on what happens if this continues."
+    takeaway: "One line on why this is a problem worth solving now"
+
+  - role: problem
+    archetype: statement
+    title: "Write your problem statement here, as a question to be answered"
+    statement: "How can we [who] achieve [what, measured] by [when]?"
+    points_heading: "Why this question"
+    points:
+      - "Specific: who and where"
+      - "Measurable: the number that proves it"
+      - "Actionable: who can act"
+      - "Time-bound: the date"
+    source: "Your group"
+
+  - role: solutions
+    archetype: columns
+    title: "Name your three initiatives here, in one sentence that links them"
+    source: "Your group"
+    columns:
+      - heading: "Initiative one"
+        image: "images/one.jpg"
+        image_note: "a photo of the thing this initiative changes"
+        lead: "One line on what it is"
+        bullets:
+          - "Why it works"
+          - "What makes it different"
+      - heading: "Initiative two"
+        image: "images/two.jpg"
+        image_note: "a photo of the thing this initiative changes"
+        lead: "One line on what it is"
+        bullets:
+          - "Why it works"
+          - "What makes it different"
+      - heading: "Initiative three"
+        image: "images/three.jpg"
+        image_note: "a photo of the thing this initiative changes"
+        lead: "One line on what it is"
+        bullets:
+          - "Why it works"
+          - "What makes it different"
+    takeaway: "One line on what the three have in common"
+
+  - role: initiative
+    archetype: exhibit
+    name: "Initiative one"
+    title: "State what initiative one achieves, with the number behind it"
+    source: "Your group analysis"
+    split: 0.60
+    left:
+      type: chart
+      chart_type: bar
+      unit: "Your unit"
+      categories: ["Today", "With this initiative"]
+      series:
+        - name: "Your measure"
+          values: [30, 70]
+    insight_heading: "What the jury will ask"
+    insights:
+      - heading: "How it works"
+        text: "The mechanism, in one line. Eighteen words."
+      - heading: "What it needs"
+        text: "Money, people, permission, a decision. Be specific."
+      - heading: "Impact"
+        text: "What changes if it works. Put a number on it."
+      - heading: "Risk"
+        text: "What most likely goes wrong, and what you would do."
+    notes: >
+      Swap the left block for an image or a table if a chart is not the strongest
+      evidence for this initiative. Keep the four right-hand answers.
+
+  - role: initiative
+    archetype: exhibit
+    name: "Initiative two"
+    title: "State what initiative two achieves, with the evidence beside it"
+    source: "Your group analysis"
+    split: 0.60
+    left:
+      type: image
+      image: "images/two.jpg"
+      image_note: "a photo, diagram or mock-up of this initiative"
+      caption: "Say what the picture shows"
+    insight_heading: "What the jury will ask"
+    insights:
+      - heading: "How it works"
+        text: "The mechanism, in one line."
+      - heading: "What it needs"
+        text: "Money, people, permission, a decision."
+      - heading: "Impact"
+        text: "What changes if it works, with a number."
+      - heading: "Risk"
+        text: "What most likely goes wrong, and the mitigation."
+
+  - role: initiative
+    archetype: exhibit
+    name: "Initiative three"
+    title: "State what initiative three achieves, with a comparable that proves it"
+    source: "Your group analysis"
+    split: 0.60
+    left:
+      type: table
+      col_widths: [3, 2, 2]
+      header: ["Where it worked", "Result", "Over"]
+      rows:
+        - ["Comparable one", "00%", "0 years"]
+        - ["Comparable two", "00%", "0 years"]
+        - ["Us, if it works", "00%", "0 years"]
+    insight_heading: "What the jury will ask"
+    insights:
+      - heading: "How it works"
+        text: "The mechanism, in one line."
+      - heading: "What it needs"
+        text: "Money, people, permission, a decision."
+      - heading: "Impact"
+        text: "What changes if it works, with a number."
+
+  - role: recap
+    archetype: exhibit
+    title: "Show all three together, with what each needs and what each returns"
+    source: "Your group analysis"
+    split: 0.64
+    left:
+      type: table
+      col_widths: [3, 2, 3, 2]
+      header: ["Initiative", "Needs", "Impact", "When"]
+      rows:
+        - ["Initiative one", "", "", ""]
+        - ["Initiative two", "", "", ""]
+        - ["Initiative three", "", "", ""]
+    insight_heading: "Why these three"
+    insights:
+      - heading: "They do different jobs"
+        text: "Say what each one solves that the others do not."
+      - heading: "Together they cover the problem"
+        text: "Say what the set achieves that no one of them does alone."
+      - heading: "Start with this one"
+        text: "Name the first move and why it goes first."
+    takeaway: "One line on what the three add up to"
+
+  - role: ask
+    archetype: exhibit
+    title: "State what you need decided today, and say by when"
+    source: "Your group"
+    split: 0.60
+    left:
+      type: table
+      col_widths: [3, 3, 2]
+      header: ["Decision", "Who signs", "By when"]
+      rows:
+        - ["First decision", "", ""]
+        - ["Second decision", "", ""]
+        - ["Third decision", "", ""]
+    insight_heading: "What happens next"
+    insights:
+      - heading: "If you say yes"
+        text: "What starts, and when the first result arrives."
+      - heading: "If you wait a quarter"
+        text: "What it costs to delay. Be concrete."
+      - heading: "What we need from you"
+        text: "The single most important thing, named."
+    takeaway: "Decision needed by [date]"

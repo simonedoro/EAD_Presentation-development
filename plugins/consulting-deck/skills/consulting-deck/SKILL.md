@@ -183,6 +183,45 @@ a claim rather than a figure.
 On every slide, ask for the number behind the claim. "Demand is rising" is a sentence.
 "Demand grows 9% a year while the network grows 2%" is a chart.
 
+### The exhibit: the default shape of a content slide
+
+The standard consulting slide is one shape, and most of this deck should use it:
+
+- **Action title on top.** The point, as a sentence.
+- **Evidence on the left**, about 60% of the width. A chart, a table, stat tiles or
+  a photo. This is what proves the title.
+- **What it means on the right**, a numbered rail of two to four insights. Not a
+  description of the chart. What the reader should conclude and do.
+- **One banner line at the foot** when there is a single thing to remember.
+
+That is the `exhibit` archetype. Left says what is true, right says so what, title
+says the answer. If you cannot write the right-hand rail, the slide has no point and
+should not exist.
+
+```
+archetype: exhibit
+split: 0.60
+left:
+  type: chart        # or table, stats, image
+  chart_type: bar
+  unit: "%"
+  categories: ["Today", "With this initiative"]
+  series: [{name: "Measure", values: [30, 70]}]
+insight_heading: "What this means"
+insights:
+  - heading: "The gap is the story"
+    text: "One line on what the reader should take from it."
+```
+
+Use the simpler archetypes when the exhibit shape would be forced: `columns` for
+three options side by side, `statement` for the problem question, `cards` for a list
+of decisions.
+
+The right rail is where participants are weakest. They describe the chart instead of
+drawing a conclusion from it. "Recycling is 37.7%" is a caption. "More capacity will
+not help, because the input is contaminated" is an insight. Push them on this every
+time.
+
 ### The stat slide
 
 `kpi` takes two to four stats. Each has a `value`, a `label`, an optional `target` and

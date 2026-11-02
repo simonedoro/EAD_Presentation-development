@@ -71,8 +71,13 @@ Image placeholders name what should be in the picture, for example "a two-compar
 kitchen bin in use". Find or take those three photos, or ask the skill to find
 licensed ones for you.
 
-`EAD Template (empty).pptx` in the same folder is the blank template, if you would
-rather start from nothing.
+`EAD executive starter deck.pptx` is the same pitch in the consulting exhibit layout:
+evidence on the left, what it means on the right, the action title saying the point.
+Use it if you want a deck that reads like a consulting deck. The placeholder numbers
+are there to be replaced.
+
+`EAD Template (empty).pptx` is the blank template, if you would rather start from
+nothing.
 
 ## The template
 
