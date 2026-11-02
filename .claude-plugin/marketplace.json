@@ -1,0 +1,14 @@
+{
+  "name": "ead-presentation-development",
+  "description": "Skills for the EAD innovation bootcamp competition",
+  "owner": { "name": "Simone Doro" },
+  "plugins": [
+    {
+      "name": "consulting-deck",
+      "source": "./plugins/consulting-deck",
+      "description": "Build, challenge and review the innovation bootcamp pitch deck in the EAD template.",
+      "category": "presentations",
+      "tags": ["slides", "powerpoint", "pitch", "bootcamp"]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+# Innovation bootcamp pitch deck. Worked example.
+#
+# Dot N in the storyline becomes slide N. Every slide carries a role, which fixes
+# where it sits in the pitch, and an archetype, which fixes how it looks.
+# Roles in order: cover, agenda, situation, complication, problem, solutions,
+# initiative (one or two slides each, three initiatives), recap, ask.
+# Anything after the ask is role: backup.
+
+meta:
+  client: EAD
+  deck: "Reed Bed Water Recovery"
+
+slides:
+
+  # 1
+  - role: cover
+    archetype: cover
+    title: "Reed Bed Water Recovery"
+    sector: "Water resources"
+    category: "Resource efficiency"
+    team: "Group 3"
+    date: "November 2026"
+
+  # 2
+  - role: agenda
+    archetype: agenda
+    title: "We set out the problem, three initiatives and the decision we need today"
+    current: 1
+    items:
+      - "Where treated water goes today"
+      - "Three initiatives to recover it"
+      - "What we need approved"
+    source: "Group 3"
+
+  # 3
+  - role: situation
+    archetype: statement
+    title: "Abu Dhabi treats 750 million litres of wastewater a day and reuses barely half"
+    statement: "Treatment capacity is not the constraint. Distribution is."
+    points_heading: "Where it stands"
+    points:
+      - "Treatment plants run at 82% of capacity"
+      - "Reuse network reaches 11 of 34 districts"
+      - "The rest discharges to sea"
+    source: "EAD internal data, 2026"
+    notes: >
+      Jury will ask for the split by emirate. Treatment is centralised in three
+      plants; the reuse network was built district by district as budget allowed,
+      which is why coverage is uneven rather than tapering with distance.
+
+  # 4
+  - role: complication
+    archetype: statement
+    title: "Demand for non-potable water is rising faster than the network can be extended"
+    statement: "Landscaping and agriculture demand grows 9% a year. The reuse network grows 2%."
+    points_heading: "Why the gap widens"
+    points:
+      - "Pipe extension costs AED 4.2m per kilometre"
+      - "New districts approved faster than pipe is laid"
+      - "Desalinated water fills the gap at four times the cost"
+    source: "EAD internal data, 2026"
+
+  # 5
+  - role: problem
+    archetype: statement
+    title: "How do we recover treated water without laying more pipe?"
+    statement: "How do we get treated water to the districts that need it, without extending the distribution network?"
+    source: "Group 3"
+
+  # 6
+  - role: solutions
+    archetype: columns
+    title: "Three initiatives recover water close to where it is already treated"
+    source: "Group 3"
+    columns:
+      - heading: "Reed bed polishing"
+        image: "images/reedbed.png"
+        lead: "Constructed wetlands at plant outfalls"
+        bullets:
+          - "No pipe beyond the plant fence"
+          - "Doubles as habitat"
+      - heading: "District-scale storage"
+        lead: "Buffer tanks in the eleven connected districts"
+        bullets:
+          - "Captures night-time surplus"
+          - "Raises daytime supply 30%"
+      - heading: "Demand matching"
+        lead: "Move thirsty uses to where the water already is"
+        bullets:
+          - "Site new nurseries near outfalls"
+          - "Zero distribution cost"
+    takeaway: "All three avoid the AED 4.2m per kilometre that makes extension unaffordable"
+
+  # 7
+  - role: initiative
+    archetype: initiative
+    name: "Reed bed polishing"
+    title: "Reed beds polish outfall water to irrigation grade for a tenth of the pipe cost"
+    image: "images/reedbed.png"
+    what: "Constructed wetlands built on land EAD already owns at the three plant outfalls, polishing secondary effluent to irrigation standard."
+    how: "Gravity flow through planted gravel beds. No pumping, no chemicals. Twelve-month build, native species only."
+    needs: "AED 18m capital, 40 hectares at Al Wathba, and a discharge permit variation."
+    impact: "Recovers 60 million litres a day, equal to 8% of current reuse volume."
+    risk: "Summer evaporation losses. Mitigated with shade netting over the final cell."
+    source: "Group 3 analysis"
+    notes: >
+      Comparable schemes: Jubail polishing wetlands, Kuwait Sulaibiya. Both reached
+      irrigation grade within 18 months. Evaporation in Gulf summers runs 8 to 12%
+      of throughput, which is why shade netting is in the capital estimate.
+
+  # 8
+  - role: initiative
+    archetype: initiative
+    name: "Reed bed polishing"
+    title: "The reed bed pays back in four years and keeps paying for thirty"
+    what: "Capital of AED 18m against avoided desalination purchases of AED 4.6m a year at current tariffs."
+    how: "Phase one cell at Al Wathba proves yield in year one. Two further cells follow once yield is confirmed."
+    needs: "Approval of phase one only, AED 6m, decision needed this quarter to use the winter build window."
+    impact: "Payback in year four. Thirty-year asset life with routine harvesting."
+    source: "Group 3 analysis"
+
+  # 9
+  - role: initiative
+    archetype: initiative
+    name: "District-scale storage"
+    title: "Buffer tanks capture the night-time surplus that currently goes to sea"
+    what: "Covered storage of 5 million litres in each of the eleven connected districts, filled overnight when demand falls."
+    how: "Standard pre-cast tanks on existing EAD depot land. No new pipe, tie-in at the district node."
+    needs: "AED 31m capital and depot land release in eight of the eleven districts."
+    impact: "Raises daytime supply in connected districts by 30% with no new treatment."
+    risk: "Depot land is contested with Operations. Mitigated by siting on hardstanding rather than yard space."
+    source: "Group 3 analysis"
+
+  # 10
+  - role: initiative
+    archetype: initiative
+    name: "Demand matching"
+    title: "Siting new nurseries at the outfalls removes distribution from the equation"
+    what: "A siting rule that places new government nurseries and amenity planting within two kilometres of a treatment outfall."
+    how: "Change to the land allocation checklist. No capital. Applies to new sites only."
+    needs: "Policy sign-off from Planning, and one named owner in the allocation team."
+    impact: "Every hectare sited this way avoids AED 0.4m of future pipe."
+    source: "Group 3 analysis"
+
+  # 11
+  - role: recap
+    archetype: table
+    title: "Together the three recover a fifth of treated water for AED 49m of capital"
+    source: "Group 3 analysis"
+    header: ["Initiative", "Capital", "Water recovered", "Payback"]
+    col_widths: [4, 2, 3, 2]
+    rows:
+      - ["Reed bed polishing", "AED 18m", "60m litres a day", "Year 4"]
+      - ["District-scale storage", "AED 31m", "Peak supply +30%", "Year 6"]
+      - ["Demand matching", "None", "Avoids future pipe", "Immediate"]
+    takeaway: "Combined, this is a fifth of treated volume at a tenth of the cost of extending the network"
+
+  # 12
+  - role: ask
+    archetype: cards
+    title: "We need three decisions today to start before the winter build window"
+    source: "Group 3"
+    cards:
+      - heading: "Approve reed bed phase one"
+        text: "AED 6m for the Al Wathba cell. Needed this quarter or the build slips a year."
+      - heading: "Release depot land in three districts"
+        text: "Operations to confirm hardstanding at Al Shahama, Baniyas and Mussafah."
+      - heading: "Name an owner for the siting rule"
+        text: "One person in land allocation to carry the checklist change."
+    takeaway: "Decision needed by 30 November to hold the schedule"
+
+  # backup
+  - role: backup
+    archetype: chart
+    title: "Reuse volume has flattened while treated volume keeps climbing"
+    source: "EAD internal data, 2022 to 2026"
+    chart_type: bar
+    unit: "Million litres a day"
+    categories: ["2022", "2023", "2024", "2025", "2026"]
+    series:
+      - name: "Treated"
+        values: [612, 648, 690, 721, 750]
+      - name: "Reused"
+        values: [301, 318, 330, 341, 352]
+    read_heading: "What this says"
+    read:
+      - "Treated volume grew 23% in four years"
+      - "Reused volume grew 17% and is slowing"
+      - "The gap is now 398 million litres a day"
+
+  # backup
+  - role: backup
+    archetype: visual
+    title: "The Al Wathba site already has the land and the gradient a reed bed needs"
+    source: "Site survey, October 2026"
+    image: "images/reedbed.png"
+    caption: "Al Wathba outfall, looking east"
+    points_heading: "Why this site"
+    points:
+      - "40 hectares already owned by EAD"
+      - "Three metre fall from outfall to the far cell"
+      - "Two kilometres from the nearest nursery"
