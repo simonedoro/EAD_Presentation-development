@@ -913,11 +913,38 @@ def _draw_insights(b, slide, spec, x, y, w, h):
 
     items = spec.get("insights") or []
     numbered = spec.get("numbered", True)
+    items = [{"text": i} if isinstance(i, str) else i for i in items]
+    tx = x + pad + (0.46 if numbered else 0.26)
+    tw = w - (tx - x) - pad
+
+    def measure(size, gap):
+        total = 0.0
+        for it in items:
+            hh = max(0.26, est_height(it.get("heading"), tw, size, bold=True)) \
+                if it.get("heading") else 0
+            th_ = max(0.24, est_height(it.get("text", ""), tw, size)) \
+                if it.get("text") else 0
+            total += hh + (0.05 if hh and th_ else 0) + th_ + gap
+        return total
+
+    # Fit the rail to the panel: ease the gap first, then the type, then complain.
+    avail = (y + h) - cy - pad
+    gap = 0.22
+    for g in (0.22, 0.18, 0.14, 0.10):
+        if measure(body, g) <= avail:
+            gap = g
+            break
+    else:
+        for shrink in (0.5, 1.0, 1.5):
+            if measure(body - shrink, 0.10) <= avail:
+                body -= shrink
+                gap = 0.10
+                break
+        else:
+            die(f"the insight rail on '{spec.get('title', '')[:50]}' does not fit. "
+                f"Cut an insight or shorten the text")
+
     for i, item in enumerate(items, start=1):
-        if isinstance(item, str):
-            item = {"text": item}
-        tx = x + pad + (0.46 if numbered else 0.26)
-        tw = w - (tx - x) - pad
         head = item.get("heading")
         text = item.get("text", "")
         hh = max(0.26, est_height(head, tw, body, bold=True)) if head else 0
@@ -936,7 +963,7 @@ def _draw_insights(b, slide, spec, x, y, w, h):
         if text:
             b.text(slide, tx, cy + (hh + 0.05 if hh else 0), tw, th_, text,
                    size=body, color=b.c["subink"] if head else b.c["ink"])
-        cy += block_h + 0.22
+        cy += block_h + gap
 
 
 def a_exhibit(b, slide, spec):

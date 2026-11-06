@@ -213,6 +213,10 @@ insights:
     text: "One line on what the reader should take from it."
 ```
 
+Four insights plus a bottom banner will not fit together. The builder refuses rather
+than clipping the text, and it is right to: pick the four answers or the one banner,
+not both.
+
 Use the simpler archetypes when the exhibit shape would be forced: `columns` for
 three options side by side, `statement` for the problem question, `cards` for a list
 of decisions.

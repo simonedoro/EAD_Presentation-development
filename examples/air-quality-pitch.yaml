@@ -1,0 +1,253 @@
+# Worked example, air quality. Built from the challenge brief and the Group 2
+# long list. Every figure comes from the brief. Anything in [brackets] is a number
+# the group would still have to establish.
+
+meta:
+  client: EAD
+  deck: "Two days of warning"
+
+slides:
+
+  - role: cover
+    archetype: cover
+    title: "Two days of warning"
+    category: "02 Air quality"
+    sector: "Environment Quality"
+    team: "Group 2"
+    date: "November 2026"
+
+  - role: agenda
+    archetype: agenda
+    title: "We set out the problem, three initiatives and the decision we need today"
+    current: 1
+    items:
+      - "Why nobody can name the cause of a bad day"
+      - "Three initiatives to warn two days ahead"
+      - "What we need approved before next summer"
+    source: "Group 2"
+
+  - role: situation
+    archetype: exhibit
+    title: "Abu Dhabi breathes six times the WHO guideline and watches it with 22 stations"
+    source: "IQAir World Air Quality Report 2024; EAD Air Quality Report 2022"
+    split: 0.60
+    left:
+      type: stats
+      stats:
+        - value: "32"
+          target: "5"
+          label: "PM2.5, micrograms per cubic metre"
+          note: "2024 average against the WHO guideline"
+          highlight: true
+        - value: "22"
+          label: "EAD monitoring stations"
+          note: "20 fixed and 2 mobile, for the whole emirate"
+        - value: "0"
+          label: "Days of warning residents get"
+          note: "No forecast reaches the public today"
+    insight_heading: "What this means"
+    insights:
+      - heading: "The measurement exists"
+        text: "EAD already runs the stations and owns the data."
+      - heading: "The warning does not"
+        text: "Residents learn about a bad day by breathing it."
+      - heading: "Monitoring is not the gap"
+        text: "More stations alone would not change what anyone knows in advance."
+    takeaway: "EAD can measure the air. It cannot yet tell anyone what is coming."
+    notes: >
+      Jury will ask why 22 stations is not enough. It is not a coverage problem so
+      much as a timing one: stations say what the air is now, not what it will be.
+
+  - role: complication
+    archetype: exhibit
+    title: "Two thirds of the dust blows in, so the local fixes aim at a third of the problem"
+    source: "EAD Air Quality Report 2022 and source study"
+    split: 0.62
+    left:
+      type: chart
+      chart_type: bar
+      unit: "Share of PM2.5, %"
+      categories: ["Blown in from outside", "Desert dust", "Local and controllable"]
+      series:
+        - name: "Share of PM2.5"
+          values: [40, 25, 35]
+    insight_heading: "What this says"
+    insights:
+      - heading: "Only 35% is ours to cut"
+        text: "Traffic, industry and building sites sit inside that share."
+      - heading: "The other 65% can still be dodged"
+        text: "You cannot stop imported dust, but you can warn people before it lands."
+      - heading: "Without the split, every fix is a guess"
+        text: "Greening, traffic limits and site rules all compete for the same budget."
+    takeaway: "If you cannot name the driver of a bad day, you cannot act on it"
+
+  - role: problem
+    archetype: statement
+    title: "How do we warn the worst-hit neighbourhoods two days before a spike?"
+    statement: "How can EAD warn the five worst-hit neighbourhoods two days before 8 in 10 dust spikes, by December 2027?"
+    points_heading: "Why this question"
+    points:
+      - "Specific: the five worst-hit neighbourhoods"
+      - "Measurable: 8 in 10 spikes, two days ahead"
+      - "Actionable: EAD owns the stations and the data"
+      - "Time-bound: December 2027, before the 2028 dust season"
+    source: "Group 2"
+    notes: >
+      We dropped the 20% exposure cut from our first draft. Two targets in one
+      question is one too many, and exposure is the outcome we measure afterwards.
+
+  - role: solutions
+    archetype: columns
+    title: "Three initiatives take us from measuring the air to warning the people in it"
+    source: "Group 2"
+    columns:
+      - heading: "See more"
+        image: "images/school-sensor.jpg"
+        image_note: "a low-cost air sensor on a school roof"
+        lead: "A PM2.5 sensor on every school"
+        bullets:
+          - "Neighbourhood-level readings"
+          - "Buildings we already own"
+      - heading: "Know why"
+        image: "images/control-room.jpg"
+        image_note: "an air quality operations screen"
+        lead: "AI that names the source of each spike"
+        bullets:
+          - "Trained on existing station data"
+          - "Turns a reading into a cause"
+      - heading: "Close the gap"
+        image: "images/stack.jpg"
+        image_note: "an industrial stack with monitoring equipment"
+        lead: "Live data from industrial stacks"
+        bullets:
+          - "The last unmeasured source"
+          - "Needs industry to agree"
+    takeaway: "Measure, explain, then warn. Each one feeds the next."
+
+  - role: initiative
+    archetype: exhibit
+    name: "See more"
+    title: "Schools turn 22 stations into neighbourhood-level coverage for a fraction of the cost"
+    source: "Group 2 analysis"
+    split: 0.55
+    left:
+      type: stats
+      stats:
+        - value: "22"
+          target: "[300]"
+          label: "Measurement points"
+          note: "Stations today, plus a sensor per school"
+          highlight: true
+        - value: "5"
+          label: "Neighbourhoods we must cover"
+          note: "The worst-hit, named in the question"
+    insight_heading: "What the jury will ask"
+    insights:
+      - heading: "How it works"
+        text: "Low-cost sensors on school roofs, reporting to the EAD network."
+      - heading: "What it needs"
+        text: "[AED x], a sensor standard, and the schools estate team."
+      - heading: "Impact"
+        text: "Readings at the neighbourhood level, not the emirate level."
+      - heading: "Risk"
+        text: "Cheap sensors drift. Mitigated by calibrating against fixed stations."
+    notes: >
+      Sensor count and unit cost still to be established. The 22 stations and the
+      five neighbourhoods come from the brief and the question.
+
+  - role: initiative
+    archetype: exhibit
+    name: "Know why"
+    title: "Beijing cut fine dust 70% once source studies showed what to cut first"
+    source: "Beijing Municipal Ecology and Environment Bureau (2025)"
+    split: 0.62
+    left:
+      type: chart
+      chart_type: bar
+      unit: "Coal's share of PM2.5 in Beijing, %"
+      categories: ["2013", "2025"]
+      series:
+        - name: "Coal's share of PM2.5"
+          values: [22, 3]
+    insight_heading: "What the jury will ask"
+    insights:
+      - heading: "How it works"
+        text: "A model trained on station chemistry names the driver of each spike."
+      - heading: "What it needs"
+        text: "EAD's own historic station data, and [2] data scientists."
+      - heading: "Impact"
+        text: "Beijing cut PM2.5 70% in twelve years by acting on the source split."
+      - heading: "Risk"
+        text: "Imported dust is harder to attribute. Start with the local third."
+
+  - role: initiative
+    archetype: exhibit
+    name: "Close the gap"
+    title: "Live stack data closes the last gap, and is the hardest of the three to get"
+    source: "Group 2 analysis"
+    split: 0.58
+    left:
+      type: table
+      col_widths: [4, 3, 3]
+      header: ["Source", "Measured today", "Measured with this"]
+      rows:
+        - ["Blown in from outside", "Partly, by satellite", "Unchanged"]
+        - ["Desert dust", "Yes, by station", "Unchanged"]
+        - ["Traffic", "Modelled only", "Modelled only"]
+        - ["Industry", "No", "Live, per stack"]
+        - ["Building sites", "No", "Separate initiative"]
+    insight_heading: "What the jury will ask"
+    insights:
+      - heading: "How it works"
+        text: "Continuous emissions monitors on large stacks, reporting to EAD."
+      - heading: "What it needs"
+        text: "Agreement from industry, or a permit condition. This is the hard part."
+      - heading: "Impact"
+        text: "Removes the largest unmeasured piece of the controllable third."
+    takeaway: "Highest value of the three, and the only one EAD cannot start alone"
+
+  - role: recap
+    archetype: exhibit
+    title: "The three run in sequence: see more, know why, then close the gap"
+    source: "Group 2 analysis"
+    split: 0.64
+    left:
+      type: table
+      col_widths: [3, 3, 3, 2]
+      header: ["Initiative", "Needs", "Impact", "Start"]
+      rows:
+        - ["Sensor on every school", "[AED x], estate team", "Neighbourhood readings", "Q1 2027"]
+        - ["AI source model", "Existing data, [2] staff", "Names the driver", "Q1 2027"]
+        - ["Live stack data", "Industry agreement", "Closes the last gap", "Q3 2027"]
+    insight_heading: "Why these three"
+    insights:
+      - heading: "Each does a different job"
+        text: "One measures, one explains, one removes the blind spot."
+      - heading: "Two can start immediately"
+        text: "Sensors and the model need nobody outside EAD."
+      - heading: "Start with the model"
+        text: "It uses data EAD already holds, so it proves the idea cheapest."
+    takeaway: "Two days of warning needs all three, but only the first two need our own decision"
+
+  - role: ask
+    archetype: exhibit
+    title: "We need three decisions today to be ready before the 2028 dust season"
+    source: "Group 2"
+    split: 0.58
+    left:
+      type: table
+      col_widths: [4, 3, 2]
+      header: ["Decision", "Who signs", "By when"]
+      rows:
+        - ["Fund the school sensor rollout", "EAD and the schools estate", "Q1 2027"]
+        - ["Release historic station data", "EAD air quality team", "This quarter"]
+        - ["Open talks with industry", "EAD permitting", "Q2 2027"]
+    insight_heading: "What happens next"
+    insights:
+      - heading: "If you say yes"
+        text: "The source model runs on last summer's spike days within a quarter."
+      - heading: "If we wait a year"
+        text: "Another dust season passes with no warning to anyone."
+      - heading: "What we need most"
+        text: "The data release. It costs nothing and unblocks everything else."
+    takeaway: "Decision needed this quarter to use last summer's data"
